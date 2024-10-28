@@ -534,7 +534,8 @@ div.ycd-tabs-text-header > div.ycd-toggle-icon-open {
 	margin-top: 20px;
 }
 
-.js-preview-sound {
+.js-preview-sound,
+.js-preview-button-click-sound {
 	color: blue;
 	margin-top: 7px;
 	cursor: pointer;
