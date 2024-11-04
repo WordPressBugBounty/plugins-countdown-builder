@@ -320,7 +320,7 @@ $allowed_html = AdminHelper::getAllowedTags();
                 <input id="js-ycd-target-link" class="btn btn-primary" type="button" value="Select File">
             </div>
             <div class="col-md-4">
-                <input type="url" class="form-control" id="ycd-download-url" name="ycd-download-url" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-download-url')); ?>">
+                <input type="url" class="form-control" id="ycd-download-url" name="ycd-download-url" value="<?php echo esc_url($typeObj->getOptionValue('ycd-download-url')); ?>">
             </div>
         </div>
         <div class="row form-group">

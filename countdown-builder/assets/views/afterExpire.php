@@ -57,7 +57,7 @@ $allowed_html = AdminHelper::getAllowedTags();
 				<label for="ycd-expire-url" class="ycd-label-of-input"><?php _e('URL', YCD_TEXT_DOMAIN); ?></label>
 			</div>
 			<div class="col-md-6">
-				<input type="url" placeholder="https://www.example.com" class="form-control" id="ycd-expire-url" name="ycd-expire-url" value="<?php echo esc_attr($this->getOptionValue('ycd-expire-url')); ?>">
+				<input type="url" placeholder="https://www.example.com" class="form-control" id="ycd-expire-url" name="ycd-expire-url" value="<?php echo esc_url($this->getOptionValue('ycd-expire-url')); ?>">
 			</div>
 		</div>
 	</div>
