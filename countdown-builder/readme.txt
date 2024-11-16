@@ -68,6 +68,9 @@ Yes you can, we have Circle and Flipclock countdown popups.
 You need to select the .zip file, there is no need to extract the zip file, just upload it.
 
 == Changelog ==
+= 2.8.0.9 =
+* Addmin side improvements
+
 = 2.8.0.8 =
 * Security improvements
 
