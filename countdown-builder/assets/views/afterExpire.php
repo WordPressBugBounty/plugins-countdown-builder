@@ -22,7 +22,7 @@ $allowed_html = AdminHelper::getAllowedTags();
 	<div id="ycd-countdown-show-text" class="ycd-countdown-show-text ycd-hide">
 		<div>
 			<div class="col-md-12">
-				<label><?php _e('Text', YCD_TEXT_DOMAIN); ?></label>
+				<label class="ycd-sub-label"><?php _e('Text', YCD_TEXT_DOMAIN); ?></label>
 			</div>
 			<div>
 				<?php

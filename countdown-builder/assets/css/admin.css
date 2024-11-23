@@ -849,7 +849,7 @@ div.ycd-tabs-text-header > div.ycd-toggle-icon-open {
 	margin: 0 !important;
 }
 
-.ycd-countdown-show-text label {
+.ycd-countdown-show-text .ycd-sub-label label {
 	padding-left: 40px;
 }
 
