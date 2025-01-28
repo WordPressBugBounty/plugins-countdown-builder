@@ -68,6 +68,9 @@ Yes you can, we have Circle and Flipclock countdown popups.
 You need to select the .zip file, there is no need to extract the zip file, just upload it.
 
 == Changelog ==
+= 2.8.4 =
+* Fixed clock inside floating button content
+
 = 2.8.3 =
 * Fixed saved duration for each user duration issue
 * Security improvements

@@ -1666,6 +1666,7 @@ class AdminHelper {
 			 'script' => $generalArray,
 			 'meta' => $generalArray,
 			 'link' => $generalArray,
+			 'canvas' => $generalArray,
 			 'input' => array(
 				'type'  => array(),
 				'id'    => array(),
@@ -1700,11 +1701,6 @@ class AdminHelper {
 			 'option' => array(
 				 'value' => array(),
 				 'selected' => array()
-			 ),
-			 'canvas' => array(
-				 'width' => array(),
-				 'height' => array(),
-				 'style' => array()
 			 ),
 			 'a' => array(
 				 'href' => array(),
