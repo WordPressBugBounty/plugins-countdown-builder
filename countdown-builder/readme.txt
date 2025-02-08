@@ -69,6 +69,9 @@ You need to select the .zip file, there is no need to extract the zip file, just
 
 == Changelog ==
 = 2.8.4 =
+* Fixed js error when includeing countdown in WooCommerce
+
+= 2.8.4 =
 * Fixed clock inside floating button content
 
 = 2.8.3 =
