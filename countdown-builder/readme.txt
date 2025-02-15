@@ -68,7 +68,14 @@ Yes you can, we have Circle and Flipclock countdown popups.
 You need to select the .zip file, there is no need to extract the zip file, just upload it.
 
 == Changelog ==
-= 2.8.4 =
+= 2.8.6 =
+* Added Simple countdown unite width
+* Added Simple countdown unite border
+* Added Simple countdown unite border width
+* Added Simple countdown unite border radius
+* Added Simple countdown unite border style
+
+= 2.8.5 =
 * Fixed js error when includeing countdown in WooCommerce
 
 = 2.8.4 =

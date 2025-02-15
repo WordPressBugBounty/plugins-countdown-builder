@@ -160,6 +160,25 @@ YcdSimpleCountdown.prototype.changeColor = function() {
 	});
 };
 
+YcdSimpleCountdown.prototype.changeBorderColor = function() {
+	var borderColor = jQuery('#ycd-simple-unite-border-color');
+
+	if(!borderColor.length) {
+		return false;
+	}
+	var that = this;
+	var countdown = this.countdownContainer;
+	borderColor.minicolors({
+		format: 'rgb',
+		opacity: 1,
+		change: function () {
+			// var val = jQuery(this).val();
+			// var type = jQuery(this).data('time-type');
+			// jQuery('.ycd-simple-countdown-'+type).css({color: val});
+		}
+	});
+};
+
 YcdSimpleCountdown.prototype.eventListener = function ()
 {
 	var that = this;
@@ -217,6 +236,7 @@ YcdSimpleCountdown.prototype.livePreview = function()
 	this.changeFontSizes();
 	this.changeFontFamily();
 	this.changeColor();
+	this.changeBorderColor();
 	this.changeDoubeleDigits();
 	this.changeDotes();
 	this.changeAlign();

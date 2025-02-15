@@ -150,6 +150,19 @@ class AdminHelper {
 			$data['font-size-number'][$i] = __($i.'px', YCD_TEXT_DOMAIN);
 		}
 
+		$data['borderTypes'] = array(
+            'solid' => __('Solid', YCD_TEXT_DOMAIN),
+            'dashed' => __('Dashed', YCD_TEXT_DOMAIN),
+            'dotted' => __('Dotted', YCD_TEXT_DOMAIN),
+            'double' => __('Double', YCD_TEXT_DOMAIN),
+            'groove' => __('Groove', YCD_TEXT_DOMAIN),
+            'ridge' => __('Ridge', YCD_TEXT_DOMAIN),
+            'inset' => __('Inset', YCD_TEXT_DOMAIN),
+            'outset' => __('Outset', YCD_TEXT_DOMAIN),
+            'none' => __('None', YCD_TEXT_DOMAIN),
+            'hidden' => __('Hidden', YCD_TEXT_DOMAIN)
+        );
+
 		$data['font-weight'] = array(
 			'normal' => __('Normal', YCD_TEXT_DOMAIN),
 			'bold' => __('Bold', YCD_TEXT_DOMAIN),

@@ -392,6 +392,9 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-simple-seconds-text', 'type' => 'text', 'defaultValue' => __('Secs', YCD_TEXT_DOMAIN));
 		$options[] = array('name' => 'ycd-enable-simple-double-digits', 'type' => 'checkbox', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-text-to-top', 'type' => 'checkbox', 'defaultValue' => '');
+		$options[] = array('name' => 'ycd-simple-enable-unite-border', 'type' => 'checkbox', 'defaultValue' => '');
+		$options[] = array('name' => 'ycd-simple-unite-border-width', 'type' => 'text', 'defaultValue' => '1px');
+		$options[] = array('name' => 'ycd-simple-unite-border-radius', 'type' => 'text', 'defaultValue' => '10px');
 		$options[] = array('name' => 'ycd-simple-timer-dotes', 'type' => 'text', 'defaultValue' => ':');
 		$options[] = array('name' => 'ycd-simple-timer-horizontal-align', 'type' => 'text', 'defaultValue' => 'center');
 

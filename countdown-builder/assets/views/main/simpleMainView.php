@@ -336,6 +336,65 @@ $allowed_html = AdminHelper::getAllowedTags();
 		</div>
 	</div>
 	<div class="ycd-sub-option-wrapper">
+		<div class="row">
+			<div class="col-md-6">
+				<label class="ycd-label-of-switch" for="ycd-simple-enable-unite-border"><?php _e('Enable Unite Border', YCD_TEXT_DOMAIN); ?></label>
+			</div>
+			<div class="col-md-6">
+				<label class="ycd-switch">
+					<input type="checkbox" class="ycd-accordion-checkbox" id="ycd-simple-enable-unite-border" class="ycd-label-of-switch" name="ycd-simple-enable-unite-border" <?php echo esc_attr($typeObj->getOptionValue('ycd-simple-enable-unite-border')); ?>>
+					<span class="ycd-slider ycd-round"></span>
+				</label>
+			</div>
+		</div>
+		<div class="ycd-accordion-content ycd-hide-content">
+			
+			<div class="row form-group">
+				<div class="col-md-6">
+					<label for="ycd-simple-unite-width"><?php _e('Width', YCD_TEXT_DOMAIN); ?></label>
+				</div>
+				<div class="col-md-6">
+					<input type="text" id="ycd-simple-unite-width" class="form-control ycd-simple-border-width" name="ycd-simple-unite-width" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-unite-width')); ?>" >
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-6">
+					<label for="ycd-simple-unite-border-width"><?php _e('border width', YCD_TEXT_DOMAIN); ?></label>
+				</div>
+				<div class="col-md-6">
+					<input type="text" id="ycd-simple-unite-border-width" class="form-control ycd-simple-border-width" name="ycd-simple-unite-border-width" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-unite-border-width')); ?>" >
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-6">
+					<label for="ycd-simple-unite-border-radius"><?php _e('border radius', YCD_TEXT_DOMAIN); ?></label>
+				</div>
+				<div class="col-md-6">
+					<input type="text" id="ycd-simple-unite-border-radius" class="form-control ycd-simple-border-radius" name="ycd-simple-unite-border-radius" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-unite-border-radius')); ?>" >
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-6">
+					<label for="ycd-simple-unite-border-type"><?php _e('border type', YCD_TEXT_DOMAIN); ?></label>
+				</div>
+				<div class="col-md-6">
+					<?php
+						$borderType = AdminHelper::selectBox($defaultData['borderTypes'], esc_attr($typeObj->getOptionValue('ycd-simple-unite-border-type')), array('name' => 'ycd-simple-unite-border-type', 'class' => 'js-ycd-select ycd-simple-unite-border-type  ycd-custom-value-accordion', 'data-custom' => 'customFont'));
+						echo wp_kses($borderType, $allowed_html);
+					?>
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-6">
+					<label for="ycd-simple-unite-border-color" class=""><?php _e('color', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html); ?></label>
+				</div>
+				<div class="col-md-6 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
+					<div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
+						<input type="text" id="ycd-simple-unite-border-color" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-simple-unite-border-color" class=" minicolors-input form-control js-ycd-simple-unite-border-color value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-unite-border-color')); ?>">
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="row form-group">
 			<div class="col-md-6">
 				<label class="ycd-label-of-switch" for="enable-double-digits"><?php _e('Double Digits', YCD_TEXT_DOMAIN); ?></label>

@@ -96,6 +96,14 @@ class SimpleCountdown extends Countdown
 	    $numbersMarginLeft = $this->getOptionValue('ycd-simple-numbers-margin-left');
 
 	    $horizontalAlign = $this->getOptionValue('ycd-simple-timer-horizontal-align');
+
+        $enableBorder = $this->getOptionValue('ycd-simple-enable-unite-border');
+        $borderWidth = $this->getOptionValue('ycd-simple-unite-border-width');
+        $borderRadius = $this->getOptionValue('ycd-simple-unite-border-radius');
+        $borderType = $this->getOptionValue('ycd-simple-unite-border-type');
+        $borderColor = $this->getOptionValue('ycd-simple-unite-border-color');
+        $uniteWidth = $this->getOptionValue('ycd-simple-unite-width');
+
         ob_start();
         ?>
         <style>
@@ -113,6 +121,16 @@ class SimpleCountdown extends Countdown
             .ycd-simple-content-wrapper-<?php echo (int)$id; ?> {
 	            text-align: <?php esc_attr_e($horizontalAlign);?>;
             }
+            <?php if ($enableBorder): ?>
+                .ycd-simple-current-unite {width: 100%;}
+                .ycd-simple-content-wrapper-<?php echo (int)$id; ?> .ycd-simple-current-unite-wrapper {
+                    border: <?php echo esc_attr( $borderWidth);?> <?php echo esc_attr( $borderType);?> <?php echo esc_attr( $borderColor);?>;
+                    border-radius: <?php echo esc_attr($borderRadius); ?>;
+                    <?php if (!empty($uniteWidth)): ?>
+                    width: <?php echo esc_attr($uniteWidth); ?>;    
+                    <?php endif?>
+                }
+            <?php endif; ?>
         </style>
         <?php
         $style .= ob_get_contents();
@@ -133,6 +151,7 @@ class SimpleCountdown extends Countdown
         $lastUnite = end($availableUnites);
         $mode = $this->getMode();
         $id = $this->getId();
+        $dotes = $this->getOptionValue('ycd-simple-timer-dotes');
         ob_start();
         ?>
         <div class="ycd-simple-mode-<?php echo esc_attr($mode); ?> ycd-simple-mode-<?php echo esc_attr($mode).'-'.esc_attr($id); ?>"><--
@@ -152,7 +171,7 @@ class SimpleCountdown extends Countdown
 	                    <?php echo (esc_attr($textToTop) ? wp_kses($this->timeUnitText($unite), $allowed_html): ''); ?>
                         <?php echo wp_kses($this->timeUnitNumber($unite), $allowed_html); ?><!--
                         --><?php echo (!esc_attr($textToTop) ? wp_kses($this->timeUnitText($unite), $allowed_html): ''); ?>
-                    </div><?php if ($unite != 'seconds'): ?><div class="ycd-simple-timer-dots <?php echo esc_attr($hideDotsClassName); ?>"><?php echo esc_attr($this->getOptionValue('ycd-simple-timer-dotes')); ?></div><?php endif; ?>
+                    </div><?php if ($unite != 'seconds'): ?> <?php if (!empty($dotes)): ?><div class="ycd-simple-timer-dots <?php echo esc_attr($hideDotsClassName); ?>"><?php echo esc_attr($dotes); ?></div> <?php endif; ?><?php endif; ?>
                 </div>
             <?php endforeach; ?>
         </div>
