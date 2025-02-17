@@ -239,19 +239,19 @@ $allowed_html = AdminHelper::getAllowedTags();
 			</div>
 			<div class="col-md-2 ycd-option-wrapper">
 				<label for="ycd-simple-numbers-margin-top" class="yrm-label">Top</label>
-				<input type="text" id="ycd-simple-numbers-margin-top" data-direction="top" name="ycd-simple-numbers-margin-top" class="form-control button-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-numbers-margin-top'))?>">
+				<input type="text" id="ycd-simple-numbers-margin-top" data-direction="top" name="ycd-simple-numbers-margin-top" class="form-control ycd-numbers-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-numbers-margin-top'))?>">
 			</div>
 			<div class="col-md-2 ycd-option-wrapper">
 				<label for="ycd-simple-numbers-margin-right" class="yrm-label">Right</label>
-				<input type="text" id="ycd-simple-numbers-margin-right" data-direction="right" name="ycd-simple-numbers-margin-right" class="form-control button-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-numbers-margin-right'))?>">
+				<input type="text" id="ycd-simple-numbers-margin-right" data-direction="right" name="ycd-simple-numbers-margin-right" class="form-control ycd-numbers-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-numbers-margin-right'))?>">
 			</div>
 			<div class="col-md-2 ycd-option-wrapper">
 				<label for="ycd-simple-text-margin-bottom" class="yrm-label">Bottom</label>
-				<input type="text" id="ycd-simple-numbers-margin-bottom" data-direction="bottom" name="ycd-simple-numbers-margin-bottom" class="form-control button-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-numbers-margin-bottom'))?>">
+				<input type="text" id="ycd-simple-numbers-margin-bottom" data-direction="bottom" name="ycd-simple-numbers-margin-bottom" class="form-control ycd-numbers-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-numbers-margin-bottom'))?>">
 			</div>
 			<div class="col-md-2 ycd-option-wrapper">
 				<label for="ycd-simple-numbers-margin-left" class="yrm-label">Left</label>
-				<input type="text" id="ycd-simple-numbers-margin-left" data-direction="left" name="ycd-simple-numbers-margin-left" class="form-control button-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-numbers-margin-left'))?>">
+				<input type="text" id="ycd-simple-numbers-margin-left" data-direction="left" name="ycd-simple-numbers-margin-left" class="form-control ycd-numbers-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-numbers-margin-left'))?>">
 			</div>
 		</div>
 		<!-- Numbers Styles end -->
@@ -310,19 +310,19 @@ $allowed_html = AdminHelper::getAllowedTags();
 			</div>
 			<div class="col-md-2 ycd-option-wrapper">
 				<label for="ycd-simple-text-margin-top" class="yrm-label">Top</label>
-				<input type="text" id="ycd-simple-text-margin-top" data-direction="top" name="ycd-simple-text-margin-top" class="form-control button-padding" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-text-margin-top'))?>">
+				<input type="text" id="ycd-simple-text-margin-top" data-direction="top" name="ycd-simple-text-margin-top" class="form-control ycd-text-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-text-margin-top'))?>">
 			</div>
 			<div class="col-md-2 ycd-option-wrapper">
 				<label for="ycd-simple-text-margin-right" class="yrm-label">Right</label>
-				<input type="text" id="ycd-simple-text-margin-right" data-direction="right" name="ycd-simple-text-margin-right" class="form-control button-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-text-margin-right'))?>">
+				<input type="text" id="ycd-simple-text-margin-right" data-direction="right" name="ycd-simple-text-margin-right" class="form-control ycd-text-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-text-margin-right'))?>">
 			</div>
 			<div class="col-md-2 ycd-option-wrapper">
 				<label for="ycd-simple-text-margin-bottom" class="yrm-label">Bottom</label>
-				<input type="text" id="ycd-simple-text-margin-bottom" data-direction="bottom" name="ycd-simple-text-margin-bottom" class="form-control button-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-text-margin-bottom'))?>">
+				<input type="text" id="ycd-simple-text-margin-bottom" data-direction="bottom" name="ycd-simple-text-margin-bottom" class="form-control ycd-text-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-text-margin-bottom'))?>">
 			</div>
 			<div class="col-md-2 ycd-option-wrapper">
 				<label for="ycd-simple-text-margin-left" class="yrm-label">Left</label>
-				<input type="text" id="ycd-simple-text-margin-left" data-direction="left" name="ycd-simple-text-margin-left" class="form-control button-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-text-margin-left'))?>">
+				<input type="text" id="ycd-simple-text-margin-left" data-direction="left" name="ycd-simple-text-margin-left" class="form-control ycd-text-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-text-margin-left'))?>">
 			</div>
 		</div>
 		<!-- Text Styles end -->
@@ -338,7 +338,7 @@ $allowed_html = AdminHelper::getAllowedTags();
 	<div class="ycd-sub-option-wrapper">
 		<div class="row">
 			<div class="col-md-6">
-				<label class="ycd-label-of-switch" for="ycd-simple-enable-unite-border"><?php _e('Enable Unite Border', YCD_TEXT_DOMAIN); ?></label>
+				<label class="ycd-label-of-switch" for="ycd-simple-enable-unite-border"><?php _e('Enable Unite Border', YCD_TEXT_DOMAIN); ?><?php echo wp_kses(ycd\ycd_info('If you enable this option we recommend you from the Timer dotes option choose without the dotes option'), $allowed_html)?></label>
 			</div>
 			<div class="col-md-6">
 				<label class="ycd-switch">
@@ -390,7 +390,7 @@ $allowed_html = AdminHelper::getAllowedTags();
 				</div>
 				<div class="col-md-6 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
 					<div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
-						<input type="text" id="ycd-simple-unite-border-color" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-simple-unite-border-color" class=" minicolors-input form-control js-ycd-simple-unite-border-color value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-unite-border-color')); ?>">
+						<input type="text" id="ycd-simple-unite-border-color" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-simple-unite-border-color" class=" form-control" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-unite-border-color')); ?>">
 					</div>
 				</div>
 			</div>

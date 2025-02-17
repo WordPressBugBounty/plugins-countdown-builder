@@ -160,24 +160,24 @@ YcdSimpleCountdown.prototype.changeColor = function() {
 	});
 };
 
-YcdSimpleCountdown.prototype.changeBorderColor = function() {
-	var borderColor = jQuery('#ycd-simple-unite-border-color');
+// YcdSimpleCountdown.prototype.changeBorderColor = function() {
+// 	var borderColor = jQuery('#ycd-simple-unite-border-color');
 
-	if(!borderColor.length) {
-		return false;
-	}
-	var that = this;
-	var countdown = this.countdownContainer;
-	borderColor.minicolors({
-		format: 'rgb',
-		opacity: 1,
-		change: function () {
-			// var val = jQuery(this).val();
-			// var type = jQuery(this).data('time-type');
-			// jQuery('.ycd-simple-countdown-'+type).css({color: val});
-		}
-	});
-};
+// 	if(!borderColor.length) {
+// 		return false;
+// 	}
+// 	var that = this;
+// 	var countdown = this.countdownContainer;
+// 	borderColor.minicolors({
+// 		format: 'rgb',
+// 		opacity: 1,
+// 		change: function () {
+// 			// var val = jQuery(this).val();
+// 			// var type = jQuery(this).data('time-type');
+// 			// jQuery('.ycd-simple-countdown-'+type).css({color: val});
+// 		}
+// 	});
+// };
 
 YcdSimpleCountdown.prototype.eventListener = function ()
 {
@@ -236,10 +236,11 @@ YcdSimpleCountdown.prototype.livePreview = function()
 	this.changeFontSizes();
 	this.changeFontFamily();
 	this.changeColor();
-	this.changeBorderColor();
+	// this.changeBorderColor();
 	this.changeDoubeleDigits();
 	this.changeDotes();
 	this.changeAlign();
+	this.changeSwithchBorder();
 };
 
 YcdSimpleCountdown.prototype.changeText = function()
@@ -440,6 +441,64 @@ YcdSimpleCountdown.prototype.getFilteredDistance = function() {
 
 	return 0;
 };
+
+YcdSimpleCountdown.prototype.addBorderStyles = function() {
+	if (jQuery('#ycd-simple-enable-unite-border').is(':checked')) {
+		jQuery(".ycd-simple-current-unite-wrapper").css({
+			width: jQuery('#ycd-simple-unite-width').val(),
+			borderWidth: jQuery('#ycd-simple-unite-border-width').val(),
+			borderRadius: jQuery('#ycd-simple-unite-border-radius').val(),
+			borderStyle: jQuery('.ycd-simple-unite-border-type').val(),
+			borderColor: jQuery("#ycd-simple-unite-border-color").val()
+		})
+	}
+	else {
+		jQuery(".ycd-simple-current-unite-wrapper").css({
+			border: "none"
+		});
+	}
+	var numbersMurginTop = jQuery("#ycd-simple-numbers-margin-top").val();
+	var numbersMurginRight = jQuery("#ycd-simple-numbers-margin-right").val();
+	var numbersMurginBottom = jQuery("#ycd-simple-numbers-margin-bottom").val();
+	var numbersMurginLeft = jQuery("#ycd-simple-numbers-margin-left").val();
+	jQuery(".ycd-simple-countdown-number").css({
+		marginTop: numbersMurginTop,
+		marginRight: numbersMurginRight,
+		marginBottom: numbersMurginBottom,
+		marginLeft: numbersMurginLeft,
+	})
+	var textMurginTop = jQuery("#ycd-simple-text-margin-top").val();
+	var textMurginRight = jQuery("#ycd-simple-text-margin-right").val();
+	var textMurginBottom = jQuery("#ycd-simple-text-margin-bottom").val();
+	var textMurginLeft = jQuery("#ycd-simple-text-margin-left").val();
+
+	jQuery(".ycd-simple-countdown-label").css({
+		marginTop: textMurginTop,
+		marginRight: textMurginRight,
+		marginBottom: textMurginBottom,
+		marginLeft: textMurginLeft,
+	})
+}
+
+YcdSimpleCountdown.prototype.changeSwithchBorder = function() {
+	var that = this;
+	jQuery('#ycd-simple-enable-unite-border, #ycd-simple-unite-width, #ycd-simple-unite-border-width, #ycd-simple-unite-border-radius,.ycd-simple-unite-border-type').change(function() {
+		that.addBorderStyles();
+	})
+	jQuery('#ycd-simple-unite-border-color').minicolors({
+		format: 'rgb',
+		opacity: 1,
+		change: function () {
+			that.addBorderStyles();
+		}
+	});
+	jQuery('.ycd-numbers-margin').bind('change', function() {
+		that.addBorderStyles();
+	})
+	jQuery('.ycd-text-margin').bind('change', function() {
+		that.addBorderStyles();
+	})
+}
 
 YcdSimpleCountdown.prototype.addTimeToClock = function()
 {
