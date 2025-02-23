@@ -336,6 +336,27 @@ $allowed_html = AdminHelper::getAllowedTags();
 		</div>
 	</div>
 	<div class="ycd-sub-option-wrapper">
+		<div class="row form-group">
+			<div class="col-md-4">
+				<label for="ycd-simple-unite-margin" class=""><?php _e('Unites margin', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html);  ?></label>
+			</div>
+			<div class="col-md-2 ycd-option-wrapper">
+				<label for="ycd-simple-unite-margin-top" class="yrm-label">Top</label>
+				<input type="text" id="ycd-simple-unite-margin-top" data-direction="top" name="ycd-simple-unite-margin-top" class="form-control ycd-unite-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-unite-margin-top'))?>">
+			</div>
+			<div class="col-md-2 ycd-option-wrapper">
+				<label for="ycd-simple-unite-margin-right" class="yrm-label">Right</label>
+				<input type="text" id="ycd-simple-unite-margin-right" data-direction="right" name="ycd-simple-unite-margin-right" class="form-control ycd-unite-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-unite-margin-right'))?>">
+			</div>
+			<div class="col-md-2 ycd-option-wrapper">
+				<label for="ycd-simple-unite-margin-bottom" class="yrm-label">Bottom</label>
+				<input type="text" id="ycd-simple-unite-margin-bottom" data-direction="bottom" name="ycd-simple-unite-margin-bottom" class="form-control ycd-unite-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-unite-margin-bottom'))?>">
+			</div>
+			<div class="col-md-2 ycd-option-wrapper">
+				<label for="ycd-simple-unite-margin-left" class="yrm-label">Left</label>
+				<input type="text" id="ycd-simple-unite-margin-left" data-direction="left" name="ycd-simple-unite-margin-left" class="form-control ycd-unite-margin" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-simple-unite-margin-left'))?>">
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-6">
 				<label class="ycd-label-of-switch" for="ycd-simple-enable-unite-border"><?php _e('Enable Unite Border', YCD_TEXT_DOMAIN); ?><?php echo wp_kses(ycd\ycd_info('If you enable this option we recommend you from the Timer dotes option choose without the dotes option'), $allowed_html)?></label>

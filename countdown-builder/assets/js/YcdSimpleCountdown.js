@@ -160,25 +160,6 @@ YcdSimpleCountdown.prototype.changeColor = function() {
 	});
 };
 
-// YcdSimpleCountdown.prototype.changeBorderColor = function() {
-// 	var borderColor = jQuery('#ycd-simple-unite-border-color');
-
-// 	if(!borderColor.length) {
-// 		return false;
-// 	}
-// 	var that = this;
-// 	var countdown = this.countdownContainer;
-// 	borderColor.minicolors({
-// 		format: 'rgb',
-// 		opacity: 1,
-// 		change: function () {
-// 			// var val = jQuery(this).val();
-// 			// var type = jQuery(this).data('time-type');
-// 			// jQuery('.ycd-simple-countdown-'+type).css({color: val});
-// 		}
-// 	});
-// };
-
 YcdSimpleCountdown.prototype.eventListener = function ()
 {
 	var that = this;
@@ -357,6 +338,9 @@ YcdSimpleCountdown.prototype.countdown = function()
 
 		if (distance <= 0  && that.countdownRun) {
 			clearInterval(x);
+			if(YcdArgs.isAdmin || options['ycd-countdown-expire-behavior'] == 'countToUp') {
+				return false;
+			}
 			that.endBehavior(countdownWrapper, that.options);
 			return;
 		}
@@ -457,6 +441,18 @@ YcdSimpleCountdown.prototype.addBorderStyles = function() {
 			border: "none"
 		});
 	}
+	var uniteMurginTop = jQuery("#ycd-simple-unite-margin-top").val();
+	var uniteMurginRight = jQuery("#ycd-simple-unite-margin-right").val();
+	var uniteMurginBottom = jQuery("#ycd-simple-unite-margin-bottom").val();
+	var uniteMurginLeft = jQuery("#ycd-simple-unite-margin-left").val();
+
+	jQuery(".ycd-simple-current-unite-wrapper").css({
+		marginTop: uniteMurginTop,
+		marginRight: uniteMurginRight,
+		marginBottom: uniteMurginBottom,
+		marginLeft: uniteMurginLeft,
+	})
+
 	var numbersMurginTop = jQuery("#ycd-simple-numbers-margin-top").val();
 	var numbersMurginRight = jQuery("#ycd-simple-numbers-margin-right").val();
 	var numbersMurginBottom = jQuery("#ycd-simple-numbers-margin-bottom").val();
@@ -496,6 +492,9 @@ YcdSimpleCountdown.prototype.changeSwithchBorder = function() {
 		that.addBorderStyles();
 	})
 	jQuery('.ycd-text-margin').bind('change', function() {
+		that.addBorderStyles();
+	})
+	jQuery('.ycd-unite-margin').bind('change', function() {
 		that.addBorderStyles();
 	})
 }

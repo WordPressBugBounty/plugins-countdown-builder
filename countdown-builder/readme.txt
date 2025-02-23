@@ -68,6 +68,12 @@ Yes you can, we have Circle and Flipclock countdown popups.
 You need to select the .zip file, there is no need to extract the zip file, just upload it.
 
 == Changelog ==
+= 2.8.8 =
+* Fixed Circle countdown responsiveness issue on mobile
+* Added margin for Simple countdown units
+* Simple countdown no longer hides in the Admin panel when expired
+* Code improvements
+
 = 2.8.7 =
 * Added simple Countdown unite border live preview
 * Fixed Simple countdown text and numbers margins

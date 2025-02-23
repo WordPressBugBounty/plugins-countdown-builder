@@ -395,6 +395,10 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-simple-enable-unite-border', 'type' => 'checkbox', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-simple-unite-border-width', 'type' => 'text', 'defaultValue' => '1px');
 		$options[] = array('name' => 'ycd-simple-unite-border-radius', 'type' => 'text', 'defaultValue' => '10px');
+		$options[] = array('name' => 'ycd-simple-unite-margin-top', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-margin-right', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-margin-bottom', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-margin-left', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
 		$options[] = array('name' => 'ycd-simple-timer-dotes', 'type' => 'text', 'defaultValue' => ':');
 		$options[] = array('name' => 'ycd-simple-timer-horizontal-align', 'type' => 'text', 'defaultValue' => 'center');
 

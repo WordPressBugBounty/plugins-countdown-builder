@@ -106,8 +106,10 @@ YcdCountdown.prototype.responsive = function() {
             var scaleDegree =  jQuery(this).width()/jQuery('.ycd-time-circle', this).width();
 
             if(jQuery('.ycd-time-circle', this).width() > jQuery(this).width()) {
-                jQuery('.ycd-time-circle', this).css({
-                    'transform': 'scale('+ scaleDegree +', '+scaleDegree+')'
+				var id = jQuery('.ycd-time-circle', this).data('id');
+                jQuery(".ycd-countdown-content-wrapper-"+id).css({
+                    'transform': 'scale('+ scaleDegree +', '+scaleDegree+')',
+					'transform-origin': 'top left'
                 });
             }
             else {
