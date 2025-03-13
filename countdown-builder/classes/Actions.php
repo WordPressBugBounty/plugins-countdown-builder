@@ -273,14 +273,20 @@ class Actions {
 		$postData['ycd-post-id'] = $postId;
 
 		if (!empty($postData['ycd-type'])) {
-			$type = $postData['ycd-type'];
+			$type = sanitize_text_field($postData['ycd-type']);
+			$allowedTypes = Countdown::countdownTypes();
+			if (!in_array($type, $allowedTypes, true)) {
+				return false;
+			}
 			$typePath = Countdown::getTypePathFormCountdownType($type);
 			$className = Countdown::getClassNameCountdownType($type);
-
+		
 			require_once($typePath.$className.'.php');
 			$className = __NAMESPACE__.'\\'.esc_attr($className);
 
-			$className::create($postData);
+			if (class_exists($className) && method_exists($className, 'create')) {
+            	$className::create($postData);
+       		}
 		}
 
 		return true;

@@ -107,6 +107,10 @@ class RegisterPostType {
 	{
 		$id = $this->getId();
 		$type = $this->getType();
+		$allowedTypes = Countdown::countdownTypes();
+		if (!in_array($type, $allowedTypes, true)) {
+			return false;
+		}
 		$typePath = Countdown::getTypePathFormCountdownType($type);
 		$className = Countdown::getClassNameCountdownType($type);
 
