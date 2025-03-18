@@ -4,7 +4,7 @@ $defaultData = AdminHelper::defaultData();
 $id = $this->getId();
 $isPro = '';
 ?>
-<div class="ycd-bootstrap-wrapper">
+<div class="ycd-bootstrap-wrapper ycd-not-options-wrapper ycd-full-pro-wrapper">
 	<div class="row form-group">
 		<div class="col-md-6">
 			<label for="ycd-countdown-enable-progress" class="ycd-label-of-switch"><?php _e('Enable Progress', YCD_TEXT_DOMAIN); ?></label>

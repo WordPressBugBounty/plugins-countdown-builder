@@ -1,5 +1,23 @@
-<div class="ycd-bootstrap-wrapper">
-	<?php require_once YCD_ADMIN_VIEWS_PATH.'demo.php'; ?>
+<?php
+use ycd\AdminHelper;
+?>
+<div class="ycd-bootstrap-wrapper ycd-not-options-wrapper">
+	<?php //require_once YCD_ADMIN_VIEWS_PATH.'demo.php'; ?>
+    <div class="row">
+        <div class="col-md-12">
+            <label>Show Options</label>
+        </div>
+        <div class="col-md-12">
+            <?php echo wp_kses(AdminHelper::selectBox(
+                array(
+                    'all' => 'All', 
+                    'showFreeOptions' => 'Show free options', 
+                    'showProOptions' => 'Show pro options'),
+                    '',
+                    array('class' => 'js-ycd-select js-features-select')
+                ), AdminHelper::getAllowedTags())?>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <label>

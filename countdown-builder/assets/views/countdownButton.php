@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 ?>
-<div class="ycd-bootstrap-wrapper">
+<div class="ycd-bootstrap-wrapper ycd-not-options-wrapper">
     <div class="row form-group">
         <div class="col-md-5">
             <label for="ycd-countdown-enable-button" class="ycd-label-of-switch"><?php _e('Enable Button', YCD_TEXT_DOMAIN)?></label>

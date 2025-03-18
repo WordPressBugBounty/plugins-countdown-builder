@@ -29,7 +29,16 @@ class Filters {
 	    add_filter( 'post_row_actions', array($this, 'duplicatePost'), 10, 2 );
 	    add_filter('ycdGeneralArgs', array($this, 'ycdGeneralArgs'), 1,1);
 	    add_filter('ycdCountdownContent', array($this, 'countdownContent'), 2,2);
+
+	    add_filter('ycdGroupsLost', array($this, 'ycdGroupsLost'), 2,2);
     }
+
+	public function ycdGroupsLost($args) {
+		if (ycd_is_free()) {
+			$args = array_merge($args, array('FreeTypes' => 'Free Types', 'PROTypes' => 'Pro types'));
+		}
+		return $args;
+	}
 
     public function ycdGeneralArgs($args) {
 		require_once(dirname(__FILE__).'/helpers/WooManager.php');

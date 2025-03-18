@@ -43,7 +43,30 @@ YcdAdmin.prototype.init = function() {
     this.metaboxSubOptions();
     this.generalColors();
     this.deleteAjaxRequest();
+
+    this.featuresSelect();
 };
+
+YcdAdmin.prototype.featuresSelect = function() {
+
+	jQuery('.js-features-select').bind('change', function() {
+		var value = jQuery(this).val();
+		if (value === 'showFreeOptions') {
+			jQuery('.ycd-option-wrapper-pro').closest('div.row').hide();
+			jQuery('.ycd-full-pro-wrapper').hide();
+		}
+		else if (value === 'showProOptions') {
+			jQuery('div.row').hide(); // Hide all divs with the class "row" except those with the class "exclude-wrapper"
+			jQuery('.ycd-option-wrapper-pro').parents('div.row').show(); 
+			jQuery('.ycd-not-options-wrapper div.row').show(); 
+			jQuery('.ycd-full-pro-wrapper').show();
+		}
+		else {
+			jQuery('div.row').show();
+		}
+	})
+};
+
 
 YcdAdmin.prototype.deleteAjaxRequest = function() {
 

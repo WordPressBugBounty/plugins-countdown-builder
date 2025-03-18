@@ -191,6 +191,7 @@ class Actions {
 	}
 
 	public function userRolesCaps() {
+		YcdCountdownOptionsConfig::init();
 		$userSavedRoles = AdminHelper::getCountdownPostAllowedUserRoles();
 
 		foreach ($userSavedRoles as $theRole) {

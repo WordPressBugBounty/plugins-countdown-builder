@@ -69,8 +69,20 @@ class CountdownType
 		}
 
 	    if (!empty($_GET['ycd_group_name']) && $_GET['ycd_group_name'] != 'all') {
-		    $group = $this->getGroup();
-		    $status = $status && in_array($_GET['ycd_group_name'], $group);
+            $groupName = $_GET['ycd_group_name'];
+            $otherFilters = array('FreeTypes', 'PROTypes');
+
+            if (!in_array($groupName,$otherFilters)) {
+                $group = $this->getGroup();
+                $status = $status && in_array($groupName, $group);
+            }
+            else if ($groupName == 'FreeTypes') {
+                $status = $this->isAvailable();
+            }
+            else if ($groupName == 'PROTypes') {
+                $status = (!$this->isAvailable());
+            }
+		    
 	    }
 
 	    return $status;

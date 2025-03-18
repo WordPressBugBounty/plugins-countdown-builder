@@ -66,7 +66,7 @@ class YcdCountdownConfig
 		self::addDefine('YCD_PRO_KEY', 'ycdProVersion');
 		self::addDefine('YCD_ADMIN_POST_NONCE', 'YCD_ADMIN_POST_NONCE');
 		self::addDefine('YCD_COUNTDOWN_PRO_URL', 'https://edmonsoft.com/countdown');
-		self::addDefine('YCD_COUNTDOWN_BUTTON_URL', 'https://edmonsoft.com/countdown/#yrm-analytics');
+		self::addDefine('YCD_COUNTDOWN_BUTTON_URL', 'https://edmonsoft.com/countdown');
 		self::addDefine('YCD_COUNTDOWN_REVIEW_URL', 'https://wordpress.org/support/plugin/countdown-builder/reviews/?filter=5');
 		self::addDefine('YCD_PROGRESS_METABOX_KEY', 'ycdMetaboxProgress');
 		self::addDefine('YCD_PROGRESS_METABOX_TITLE', __('Progress Bar', YCD_TEXT_DOMAIN));
@@ -79,8 +79,8 @@ class YcdCountdownConfig
 		self::addDefine('YCD_CRON_REPEAT_INTERVAL', 1);
 		self::addDefine('YCD_AJAX_SUCCESS', 1);
 		self::addDefine('YCD_TABLE_LIMIT', 15);
-		self::addDefine('YCD_VERSION_PRO', 2.77);
-		self::addDefine('YCD_VERSION', 2.89);
+		self::addDefine('YCD_VERSION_PRO', 2.78);
+		self::addDefine('YCD_VERSION', 2.891);
 		self::addDefine('YCD_FREE_VERSION', 1);
 		self::addDefine('YCD_SILVER_VERSION', 2);
 		self::addDefine('YCD_GOLD_VERSION', 3);
@@ -88,14 +88,14 @@ class YcdCountdownConfig
 		self::addDefine('YCD_EXTENSION_VERSION', 99);
 		require_once(dirname(__FILE__).'/config-pkg.php');
 		
-		$versionText = '2.8.9';
+		$versionText = '2.8.9.1';
 		if (YCD_PKG_VERSION != YCD_FREE_VERSION) {
-			$versionText = '2.7.6';
+			$versionText = '2.7.7';
         }
 		
 		self::addDefine('YCD_VERSION_TEXT', $versionText);
-		self::addDefine('YCD_LAST_UPDATE', 'March 13');
-		self::addDefine('YCD_NEXT_UPDATE', 'March 22');
+		self::addDefine('YCD_LAST_UPDATE', 'March 19');
+		self::addDefine('YCD_NEXT_UPDATE', 'March 30');
 	}
 
 	public static function displaySettings()

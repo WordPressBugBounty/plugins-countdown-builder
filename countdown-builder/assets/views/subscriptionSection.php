@@ -17,7 +17,7 @@ if (!$isFree) {
 }
 
 ?>
-<div class="ycd-bootstrap-wrapper">
+<div class="ycd-bootstrap-wrapper ycd-not-options-wrapper ycd-full-pro-wrapper">
     <div class="row form-group">
         <div class="col-md-6">
             <label for="ycd-enable-subscribe-form" class="ycd-label-of-input"><?php _e('Enable Subscribe Form', YCD_TEXT_DOMAIN); ?></label>

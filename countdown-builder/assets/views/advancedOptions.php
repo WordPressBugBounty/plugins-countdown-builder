@@ -6,7 +6,7 @@ use function ycd\ycd_info;
 $defaultData = AdminHelper::defaultData();
 $allowed_html = AdminHelper::getAllowedTags();
 ?>
-<div class="ycd-bootstrap-wrapper">
+<div class="ycd-bootstrap-wrapper ycd-not-options-wrapper ycd-full-pro-wrapper">
 <div class="row form-group">
     <div class="col-md-6">
         <label for="ycd-countdown-hide-mobile" class="ycd-label-of-switch"><?php _e('Hide On Mobile Devices', YCD_TEXT_DOMAIN); ?></label>
