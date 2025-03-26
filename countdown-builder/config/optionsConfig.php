@@ -9,6 +9,7 @@ class YcdCountdownOptionsConfig
 		$YCD_TYPES['typeName'] = apply_filters('ycdTypes', array(
 			'circle' => YCD_FREE_VERSION,
 			'sticky' => YCD_FREE_VERSION,
+			'moneyCounter' => YCD_FREE_VERSION,
 			'simple' => YCD_FREE_VERSION,
 			'timer' => YCD_FREE_VERSION,
 			'clock1' => YCD_FREE_VERSION,
@@ -27,6 +28,7 @@ class YcdCountdownOptionsConfig
 		$YCD_TYPES['typeGroupName'] = apply_filters('ycdTypeGroupName', array(
 			'circle' => array('countdown'),
 			'sticky' => array('countdown', 'other'),
+			'moneyCounter' => array('countdown'),
 			'simple' => array('countdown'),
 			'timer' => array('timer'),
 			'clock1' => array('clock'),
@@ -45,6 +47,7 @@ class YcdCountdownOptionsConfig
 		$YCD_TYPES['typePath'] = apply_filters('ycdTypePaths', array(
 			'circle' => YCD_COUNTDOWNS_PATH,
 			'sticky' => YCD_COUNTDOWNS_PATH,
+			'moneyCounter' => YCD_COUNTDOWNS_PATH,
 			'simple' => YCD_COUNTDOWNS_PATH,
 			'timer' => YCD_COUNTDOWNS_PATH,
 			'clock1' => YCD_COUNTDOWNS_PATH,
@@ -63,6 +66,7 @@ class YcdCountdownOptionsConfig
 		$YCD_TYPES['titles'] = apply_filters('ycdTitles', array(
 			'circle' => __('Circle', YCD_TEXT_DOMAIN),
 			'sticky' => __('Sticky Countdown', YCD_TEXT_DOMAIN),
+			'moneyCounter' => __('Money Countdown', YCD_TEXT_DOMAIN),
 			'simple' => __('Simple Countdown', YCD_TEXT_DOMAIN),
 			'timer' => __('Timer', YCD_TEXT_DOMAIN),
 			'clock1' => __('Clock 1', YCD_TEXT_DOMAIN),
@@ -416,6 +420,12 @@ class YcdCountdownOptionsConfig
         $options[] = array('name' => 'ycd-simple-countdown-before-countdown', 'type' => 'html', 'defaultValue' => '');
         $options[] = array('name' => 'ycd-simple-countdown-after-countdown', 'type' => 'html', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-tr', 'type' => 'array', 'defaultValue' => '');
+
+		$options[] = array('name' => 'ycd-money-initial', 'type' => 'text', 'defaultValue' => '31000000000');
+		$options[] = array('name' => 'ycd-money-increase-unite', 'type' => 'text', 'defaultValue' => '2564.19');
+		$options[] = array('name' => 'ycd-money-prefix', 'type' => 'text', 'defaultValue' => '$');
+		$options[] = array('name' => 'ycd-money-decimal-places', 'type' => 'text', 'defaultValue' => '2');
+		$options[] = array('name' => 'ycd-money-font-size', 'type' => 'text', 'defaultValue' => '48px');
 
 		$YCD_OPTIONS = apply_filters('ycdCountdownDefaultOptions', $options);
 	}

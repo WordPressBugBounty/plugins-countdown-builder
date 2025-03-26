@@ -3,7 +3,7 @@ Contributors: adamskaat
 Tags: countdown, timer, countdown timer
 Requires at least: 3.8
 Tested up to: 6.7
-Stable tag: 2.8.9.1
+Stable tag: 2.7.8
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -68,6 +68,9 @@ Yes you can, we have Circle and Flipclock countdown popups.
 You need to select the .zip file, there is no need to extract the zip file, just upload it.
 
 == Changelog ==
+= 2.9.0 =
+* Added Money Counter type
+
 = 2.8.9.1 =
 * Countdown types section added possibility to show only FREE types
 * Inside info section we added possibility to show only FREE features

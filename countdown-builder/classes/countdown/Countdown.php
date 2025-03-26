@@ -1244,25 +1244,8 @@ abstract class Countdown {
 	}
 
 	public static function countdownTypes() {
-		$allowedTypes = [
-			'circle', 
-			'sticky', 
-			'simple', 
-			'timer', 
-			'clock1', 
-			'clock2', 
-			'clock3', 
-			'clock4', 
-			'clock5', 
-			'clock6', 
-			'clock7', 
-			'woo', 
-			'circlePopup', 
-			'flipClock', 
-			'flipClockPopup', 
-			'circleTimer', 
-		];
-
-		return $allowedTypes;
+		global $YCD_TYPES;
+		
+		return array_keys($YCD_TYPES['typeName']);
 	}
 }

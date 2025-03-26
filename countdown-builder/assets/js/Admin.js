@@ -4,6 +4,7 @@ function YcdAdmin() {
 
 YcdAdmin.prototype.init = function() {
 	this.initCountdownDateTimePicker();
+	this.initMoneyDateTimePicker();
 	this.select2();
 	this.accordionContent();
 	this.livePreviewToggle();
@@ -791,6 +792,19 @@ YcdAdmin.prototype.initCountdownDateTimePicker = function() {
 	countdown.ycddatetimepicker({
 		format: 'Y-m-d H:i',
 		minDate: 0
+	});
+};
+
+YcdAdmin.prototype.initMoneyDateTimePicker = function() {
+	var countdown = jQuery('.ycd-money-time-picker');
+
+	if(!countdown.length) {
+		return false;
+	}
+
+	countdown.ycddatetimepicker({
+		format: 'Y-m-d H:i',
+		maxDate: 0
 	});
 };
 

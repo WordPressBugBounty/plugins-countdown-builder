@@ -104,6 +104,15 @@
 	background-size: 100% 100%;
 }
 
+.moneyCounter-countdown,
+.moneyCounter-countdown-pro {
+	background-image: url("../img/moneyCountdown.jpg");
+	background-size: contain !important;
+    background-repeat: no-repeat;
+    background-position: center;
+	background-color: white;
+}
+
 .timer-countdown {
 	background-image: url("../img/DigtalCountdown.jpg");
 	background-size: 100% 100%;

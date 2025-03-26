@@ -73,6 +73,12 @@ class RegisterPostType {
 		$typePath = Countdown::getTypePathFormCountdownType($type);
 		$className = Countdown::getClassNameCountdownType($type);
 
+		$type = $this->getType();
+		$allowedTypes = Countdown::countdownTypes();
+		if (!in_array($type, $allowedTypes, true)) {
+			return $supports;
+		}
+
 		if (!file_exists($typePath.$className.'.php')) {
 			return $supports;
 		}
