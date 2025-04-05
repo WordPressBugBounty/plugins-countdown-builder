@@ -44,7 +44,7 @@ use ycd\AdminHelper;
             <label for="ycd-money-decimal-places"><?php _e('Decimal Places', YCD_TEXT_DOMAIN)?></label>
         </div>
         <div class="col-md-5">
-            <?php echo AdminHelper::selectBox(array(0 => 0, 1 => 1, 2 => 2, 3 => 3, 4 => 4),$this->getOptionValue('ycd-money-decimal-places'), array('class' => 'js-ycd-select', 'name' => 'ycd-money-decimal-places')); ?>
+            <?php echo AdminHelper::selectBox(array(0 => 0, 1 => 1, 2 => 2, 3 => 3, 4 => 4),$this->getOptionValue('ycd-money-decimal-places'), array('class' => 'js-ycd-select', 'name' => 'ycd-money-decimal-places', 'id' => 'ycd-money-decimal-places')); ?>
         </div>
     </div>
     <div class="row form-group">
@@ -62,6 +62,11 @@ use ycd\AdminHelper;
         <div class="col-md-5">
             <input type="text" id="ycd-money-font-size" name="ycd-money-font-size" value="<?php echo esc_attr($this->getOptionValue('ycd-money-font-size')); ?>" class="form-control" />
         </div>
+    </div>
+    <div>
+        <?php
+            require_once(YCD_VIEWS_PATH.'preview.php');
+        ?>
     </div>
 </div>
 

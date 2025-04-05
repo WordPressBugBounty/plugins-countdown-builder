@@ -5,6 +5,7 @@
 	</div>
 	<div class="ycd-livew-preview-content">
 		<?php
+		
 		if(method_exists($typeObj, 'renderLivePreview')) {
 			$typeObj->renderLivePreview();
 		}

@@ -26,6 +26,7 @@ class MoneycounterCountdown extends Countdown {
 	}
 
     public function getViewContent() {
+   
         $this->includeStyles();
         ob_start();
         ?>
@@ -44,5 +45,9 @@ class MoneycounterCountdown extends Countdown {
         ob_end_clean();
 
         return $content;
+    }
+
+    public function renderLivePreview() {
+        echo '<div class="ycd-countdown-wrapper ycd-moneycountdown-content">'.wp_kses($this->getViewContent(), AdminHelper::getAllowedTags()).'</div>';
     }
 }
