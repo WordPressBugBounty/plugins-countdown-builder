@@ -423,6 +423,7 @@ class YcdCountdownOptionsConfig
 
 		$options[] = array('name' => 'ycd-money-initial', 'type' => 'text', 'defaultValue' => '31000000000');
 		$options[] = array('name' => 'ycd-money-increase-unite', 'type' => 'text', 'defaultValue' => '2564.19');
+		$options[] = array('name' => 'ycd-money-start-date', 'type' => 'text', 'defaultValue' => date('Y-m-d H:i'));
 		$options[] = array('name' => 'ycd-money-prefix', 'type' => 'text', 'defaultValue' => '$');
 		$options[] = array('name' => 'ycd-money-decimal-places', 'type' => 'text', 'defaultValue' => '2');
 		$options[] = array('name' => 'ycd-money-font-size', 'type' => 'text', 'defaultValue' => '48px');

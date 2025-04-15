@@ -1,6 +1,13 @@
 <?php
 // https://chatgpt.com/c/67dec4aa-e360-8007-a4e0-d7d5b794a51c
 use ycd\AdminHelper;
+$allowed_html = AdminHelper::getAllowedTags();
+$proSpan = '';
+$isPro = '';
+if(YCD_PKG_VERSION == YCD_FREE_VERSION) {
+	$isPro = '-pro';
+	$proSpan = '<span class="ycd-pro-span">'.__('pro', YCD_TEXT_DOMAIN).'</span>';
+}
 ?>
 
 <div class="ycd-bootstrap-wrapper">
@@ -63,6 +70,26 @@ use ycd\AdminHelper;
             <input type="text" id="ycd-money-font-size" name="ycd-money-font-size" value="<?php echo esc_attr($this->getOptionValue('ycd-money-font-size')); ?>" class="form-control" />
         </div>
     </div>
+    <div class="row form-group">
+        <div class="col-md-5">
+            <label for="ycd-money-color" class="ycd-label-of-input"><?php _e('Color', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html);?></label>
+        </div>
+        <div class="col-md-5 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
+            <div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
+                <input type="text" id="ycd-money-color" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-money-color" class="minicolors-input form-control" value="<?php echo esc_attr($this->getOptionValue('ycd-money-color')); ?>">
+            </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-5">
+            <label for="ycd-money-bg-color" class="ycd-label-of-input"><?php _e('Background Color', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html);?></label>
+        </div>
+        <div class="col-md-5 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
+            <div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
+                <input type="text" id="ycd-money-bg-color" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-money-bg-color" class="minicolors-input form-control" value="<?php echo esc_attr($this->getOptionValue('ycd-money-bg-color')); ?>">
+            </div>
+        </div>
+    </div>
     <div>
         <?php
             require_once(YCD_VIEWS_PATH.'preview.php');
@@ -73,4 +100,7 @@ use ycd\AdminHelper;
 <?php
 $type = $this->getCurrentTypeFromOptions();
 ?>
+<style>
+    .ycd-livew-preview-content {min-width: 460px;}
+</style>
 <input type="hidden" name="ycd-type" value="<?= esc_attr($type); ?>">

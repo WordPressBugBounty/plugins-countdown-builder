@@ -28,18 +28,29 @@ class MoneycounterCountdown extends Countdown {
     public function getViewContent() {
    
         $this->includeStyles();
+        $id = $this->getId();
+  
         ob_start();
+        $inlineStyle = 'font-size: '.esc_attr($this->getOptionValue('ycd-money-font-size')).';';
+        $stle = apply_filters('ycd_money_counter_inline_style', '', $this);
         ?>
-            <div id="ycd-money-counter"
+            <div id="ycd-money-counter" class="ycd-money-counter-<?php esc_attr_e($id); ?>"
                 data-initial="<?php echo esc_attr($this->getOptionValue('ycd-money-initial')); ?>"
                 data-increase="<?php echo esc_attr($this->getOptionValue('ycd-money-increase-unite')); ?>"
                 data-start-date="<?php echo esc_attr($this->getOptionValue('ycd-money-start-date')); ?>"
                 data-decimals="<?php echo esc_attr($this->getOptionValue('ycd-money-decimal-places')); ?>"
                 data-prefix="<?php echo esc_attr($this->getOptionValue('ycd-money-prefix')); ?>"
                 data-target="<?php echo esc_attr($this->getOptionValue('ycd-money-target-value')); ?>"
-                style="font-size: <?php echo esc_attr($this->getOptionValue('ycd-money-font-size')); ?>;">
+                style="<?php echo esc_attr($inlineStyle); ?>"
+            >
                 Loading...
             </div>
+            <style>
+                <?php echo esc_attr($stle)?>
+                .ycd-money-counter-<?php esc_attr_e($id); ?> {
+                    text-align: center;
+                }
+            </style>
         <?php
         $content = ob_get_contents();
         ob_end_clean();
@@ -48,6 +59,6 @@ class MoneycounterCountdown extends Countdown {
     }
 
     public function renderLivePreview() {
-        echo '<div class="ycd-countdown-wrapper ycd-moneycountdown-content">'.wp_kses($this->getViewContent(), AdminHelper::getAllowedTags()).'</div>';
+        echo '<div class="ycd-countdown-wrapper ycd-moneycountdown-content">'.wp_kses($this->getViewContent(), AdminHelper::getAllowedTags(), 'post').'</div>';
     }
 }

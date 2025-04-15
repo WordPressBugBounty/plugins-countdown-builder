@@ -76,6 +76,19 @@ YcdMomenyCounter.prototype.preview = function() {
     jQuery('#ycd-money-font-size').on('change', function(e) {
         that.counterEl.style.fontSize = e.target.value;
     })
+
+    jQuery('#ycd-money-color').minicolors({
+		format: 'rgb',
+		opacity: 1
+	}).on("change", function(e) {
+        jQuery("#ycd-money-counter").css({color: e.target.value});
+    })
+    jQuery('#ycd-money-bg-color').minicolors({
+		format: 'rgb',
+		opacity: 1
+	}).on("change", function(e) {
+        jQuery("#ycd-money-counter").css({background: e.target.value});
+    })
 }
 
 YcdMomenyCounter.prototype.run = function() {
