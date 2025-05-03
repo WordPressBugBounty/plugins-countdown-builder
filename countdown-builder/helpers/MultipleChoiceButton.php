@@ -202,7 +202,7 @@ class MultipleChoiceButton {
 		}
 		$allowed_html = AdminHelper::getAllowedTags();
 	
-		$label = '<div '.wp_kses($parentAttrsStr, $allowed_html).'>';
+		$label = '<div '.wp_kses($parentAttrsStr, $allowed_html).' data-id="pxika">';
 		$label .= "<input id='".wp_kses($value, $allowed_html)."' ".wp_kses($inputAttrStr, $allowed_html)." ".esc_attr($checked)." >";
 		$label .=  '<div class="radio-group '.esc_attr($fieldClass).'">
 			<label for='.esc_attr($value).'><span></span></label>
@@ -239,10 +239,14 @@ class MultipleChoiceButton {
 		if (!empty($labelData['infoText'])) {
 			$infoText .= ycd_info($labelData['infoText']);
 		}
+		$infoPreview = '';
+		if (!empty($labelData['infoPreview'])) {
+			$infoPreview .= ycd_preview(YCD_COUNTDOWN_IMG_URL.$labelData['infoPreview']);
+		}
 		$allowed_html = AdminHelper::getAllowedTags();
 
 		$label = '<div '.wp_kses($parentAttrsStr, $allowed_html).'>';
-		$label .= "<label for='".esc_attr($value)."'>".wp_kses($labelName, $allowed_html)."</label>".wp_kses($infoText, $allowed_html);
+		$label .= "<label for='".esc_attr($value)."'>".wp_kses($labelName, $allowed_html)."</label>".wp_kses($infoText, $allowed_html).wp_kses($infoPreview, $allowed_html);
 		$label .=  '</div>';
 		
 		return $label;

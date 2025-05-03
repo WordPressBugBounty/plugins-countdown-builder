@@ -79,8 +79,8 @@ class YcdCountdownConfig
 		self::addDefine('YCD_CRON_REPEAT_INTERVAL', 1);
 		self::addDefine('YCD_AJAX_SUCCESS', 1);
 		self::addDefine('YCD_TABLE_LIMIT', 15);
-		self::addDefine('YCD_VERSION_PRO', 2.801);
-		self::addDefine('YCD_VERSION', 2.92);
+		self::addDefine('YCD_VERSION_PRO', 2.802);
+		self::addDefine('YCD_VERSION', 2.93);
 		self::addDefine('YCD_FREE_VERSION', 1);
 		self::addDefine('YCD_SILVER_VERSION', 2);
 		self::addDefine('YCD_GOLD_VERSION', 3);

@@ -643,6 +643,43 @@ div.ycd-tabs-text-header > div.ycd-toggle-icon-open {
 	display: inline-block;
 	cursor: pointer;
 }
+/*Preview Start*/
+.ycd-preview-wrapper {
+	display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+.ycd-preview-wrapper {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.ycd-preview-content {
+	visibility: hidden;
+	width: auto;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 5px;
+	position: absolute;
+	z-index: 1;
+	border: 1px solid #ccc;
+	white-space: nowrap;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	po
+}
+
+.ycd-preview-wrapper:hover .ycd-preview-content {
+	visibility: visible;
+}
+
+.ycd-preview-content img {
+	max-width: 500px;
+	height: auto;
+	display: block;
+}
+
+/*Preview end*/
 
 .ycd-condition-delete {
 	display: none !important;

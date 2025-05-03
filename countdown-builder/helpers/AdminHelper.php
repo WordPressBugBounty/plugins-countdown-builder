@@ -511,7 +511,8 @@ class AdminHelper {
 					'value' => 'schedule'
 				),
 				'label' => array(
-					'name' => __('Schedule 1', YCD_TEXT_DOMAIN)
+					'name' => __('Schedule 1', YCD_TEXT_DOMAIN),
+					'infoPreview' => "proPreview/schedule1.png",
 				)
 			);
 			
@@ -524,7 +525,8 @@ class AdminHelper {
 					'value' => 'schedule2'
 				),
 				'label' => array(
-					'name' => __('Schedule 2', YCD_TEXT_DOMAIN)
+					'name' => __('Schedule 2', YCD_TEXT_DOMAIN),
+					'infoPreview' => "proPreview/schedule2.png",
 				)
 			);
 
@@ -1091,31 +1093,34 @@ class AdminHelper {
 	 * @return string
 	 */
 	public static function createRadioButtons($data, $savedValue, $attrs = array()) {
-
 		$attrString = '';
-		$selected = '';
-
-		if(!empty($attrs) && isset($attrs)) {
-
+		$nameAttr = 'radio_option'; // fallback name attribute if not set
+	
+		if (!empty($attrs)) {
 			foreach ($attrs as $attrName => $attrValue) {
-				$attrString .= ''.esc_attr($attrName).'='.esc_attr($attrValue).' ';
+				if ($attrName === 'name') {
+					$nameAttr = $attrValue;
+				}
+				$attrString .= esc_attr($attrName) . '="' . esc_attr($attrValue) . '" ';
 			}
 		}
-
+	
 		$radioButtons = '';
-
-		foreach($data as $value) {
-
-			$checked = '';
-			if($value == $savedValue) {
-				$checked = 'checked';
-			}
-
-			$radioButtons .= "<input type=\"radio\" value=".esc_attr($value)." ".esc_attr($attrString)."  ".esc_attr($checked).">";
+	
+		foreach ($data as $index => $value) {
+			$checked = ($value == $savedValue) ? 'checked' : '';
+			$id = $nameAttr . '_' . $index;
+	
+			$radioButtons .= '<div style="display: inline-block;">';
+			$radioButtons .= "<input type=\"radio\" id=\"" . esc_attr($id) . "\" name=\"" . esc_attr($nameAttr) . "\" value=\"" . esc_attr($value) . "\" $attrString " . esc_attr($checked) . ">";
+			$radioButtons .= '<div class="radio-group">';
+			$radioButtons .= '<label for="' . esc_attr($id) . '"><span></span></label>';
+			$radioButtons .= '</div>';
+			$radioButtons .= '</div>';
 		}
-
+	
 		return $radioButtons;
-	}
+	}	
 
 	public static function getCurrentUserRole()
 	{
@@ -1647,6 +1652,7 @@ class AdminHelper {
 
 	public static function getAllowedTags() {
         $generalArray = array(
+            'src'  => array(),
             'type'  => array(),
             'id'    => array(),
             'name'  => array(),
@@ -1680,6 +1686,7 @@ class AdminHelper {
 			 'meta' => $generalArray,
 			 'link' => $generalArray,
 			 'canvas' => $generalArray,
+			 'img' => $generalArray,
 			 'input' => array(
 				'type'  => array(),
 				'id'    => array(),
@@ -1770,6 +1777,16 @@ function ycd_info($message) {
 	$content = '<div class="ycd-tooltip"><span class="dashicons dashicons-editor-help ycd-info-dashicon"></span>';
 	$content.= '<span class="ycd-tooltiptext">'.esc_attr($message).'</span>';
 	$content.= '</div>';
+
+	return $content;
+}
+function ycd_preview($icon) {
+
+	$content = '<div class="ycd-preview-wrapper">
+	<span class="ycd-preview-icon"></span>'; 
+
+	$content .= '<div class="ycd-preview-content"><img src="' . esc_url($icon) . '" alt="icon preview" /></div>';
+	$content .= '</div>';
 
 	return $content;
 }
