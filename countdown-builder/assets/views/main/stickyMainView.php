@@ -10,7 +10,20 @@ if(YCD_PKG_VERSION == YCD_FREE_VERSION) {
 	$proSpan = '<span class="ycd-pro-span">'.__('pro', YCD_TEXT_DOMAIN).'</span>';
 }
 $createCountdown = AdminHelper::getCreateCountdownUrl();
-$args = array('allowTypes' => array('circle'), 'except' => array('sticky'));
+$args = array('allowTypes' => array(
+	'circle', 
+	'simple', 
+	'moneyCounter', 
+	'timer', 
+	'clock1',
+	'clock2',
+	'clock3',
+	'clock4',
+	'clock5',
+	'clock6',
+	'clock7',
+	'flipClock',
+), 'except' => array('sticky'));
 $countdownsIdAndTitle = \ycd\Countdown::getCountdownsIdAndTitle($args);
 $stickySectionsOrder = $defaultData['stickySectionsOrder'];
 $stickyExpiration = $defaultData['stickyButtonExpiration'];

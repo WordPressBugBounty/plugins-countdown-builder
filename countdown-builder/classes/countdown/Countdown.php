@@ -1144,6 +1144,7 @@ abstract class Countdown {
 		$options['bg_width'] = $this->getOptionValue('ycd-circle-bg-width');
 		$options['start_angle'] = $this->getOptionValue('ycd-circle-start-angle');
 		$options['count_past_zero'] = false;
+		$options['hideTextInsideCircle'] = true;
 		if($this->getOptionValue('ycd-countdown-expire-behavior') == 'countToUp') {
 			$options['count_past_zero'] = true;
 		}

@@ -2,7 +2,7 @@
 Contributors: adamskaat
 Tags: countdown, timer, countdown timer
 Requires at least: 3.8
-Tested up to: 6.7
+Tested up to: 6.8
 Stable tag: 2.7.8
 Requires PHP: 5.3
 License: GPLv2 or later
@@ -68,6 +68,9 @@ Yes you can, we have Circle and Flipclock countdown popups.
 You need to select the .zip file, there is no need to extract the zip file, just upload it.
 
 == Changelog ==
+= 2.9.4 =
+* Sticky Countdown and Simple Countdown integrity issue
+
 = 2.9.3 =
 * Fix Circle Popup preview
 * Fix Circle Popup Change theme
