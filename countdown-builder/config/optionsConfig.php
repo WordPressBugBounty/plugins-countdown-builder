@@ -381,6 +381,11 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-sticky-scroll-delay', 'type' => 'text', 'defaultValue' =>  '0');
 		$options[] = array('name' => 'ycd-sticky-scroll-percent', 'type' => 'text', 'defaultValue' =>  '1%');
 
+		$options[] = array('name' => 'ycd-sticky-enable-days', 'type' => 'checkbox', 'defaultValue' =>  'on');
+		$options[] = array('name' => 'ycd-sticky-enable-hours', 'type' => 'checkbox', 'defaultValue' =>  'on');
+		$options[] = array('name' => 'ycd-sticky-enable-minutes', 'type' => 'checkbox', 'defaultValue' =>  'on');
+		$options[] = array('name' => 'ycd-sticky-enable-seconds', 'type' => 'checkbox', 'defaultValue' =>  'on');
+
 		// Simple countdown
 		$options[] = array('name' => 'ycd-simple-enable-years', 'type' => 'checkbox', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-simple-years-text', 'type' => 'text', 'defaultValue' => __('Years', YCD_TEXT_DOMAIN));

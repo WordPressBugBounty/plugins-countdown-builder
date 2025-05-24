@@ -68,6 +68,9 @@ Yes you can, we have Circle and Flipclock countdown popups.
 You need to select the .zip file, there is no need to extract the zip file, just upload it.
 
 == Changelog ==
+= 2.9.5 =
+* Added Sticky Countdown Unites swith off/on
+
 = 2.9.4 =
 * Sticky Countdown and Simple Countdown integrity issue
 

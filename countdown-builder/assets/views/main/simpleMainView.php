@@ -9,6 +9,7 @@ if(YCD_PKG_VERSION == YCD_FREE_VERSION) {
 }
 $defaultData = AdminHelper::defaultData();
 $allowed_html = AdminHelper::getAllowedTags();
+
 ?>
 <div class="ycd-bootstrap-wrapper">
     <!-- Labels start  -->

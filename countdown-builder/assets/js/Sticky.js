@@ -88,46 +88,54 @@ YcdSticky.prototype.stickyClock = function() {
 	this.seconds = that.getSeconds(settings)*1000;
 
 	var runTimer = function () {
+		var enableDays = settings['ycd-sticky-enable-days'];
+		var enableHours = settings['ycd-sticky-enable-hours'];
+		var enableMinutes = settings['ycd-sticky-enable-minutes'];
+		var enableSeconds = settings['ycd-sticky-enable-seconds'];
+	
 		var now = moment().tz(settings.timeZone).format('MM/DD/YYYY HH:mm:ss');
 		//var now = moment().format('MM/DD/YYYY HH:mm:ss');
 		if (!that.isActive && settings['ycd-countdown-stop-inactive']) {
 			return false;
 		}
+	
 		that.seconds -= 1000;
 		var distance = that.seconds;
-
+	
 		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 		var isDouble = YCD_STICKY_ARGS.double;
-
-		days = ((days > 0)? days: 0);
-		hours = ((hours > 0)? hours: 0);
-		minutes = ((minutes > 0)? minutes: 0);
-		seconds = ((seconds > 0)? seconds: 0);
+	
+		days = (days > 0) ? days : 0;
+		hours = (hours > 0) ? hours : 0;
+		minutes = (minutes > 0) ? minutes : 0;
+		seconds = (seconds > 0) ? seconds : 0;
+	
 		if (isDouble) {
-			if (days < 10) {
-				days = '0'+days
-			}
-			if (hours < 10) {
-				hours = '0'+hours
-			}
-			if (minutes < 10) {
-				minutes = '0'+minutes
-			}
-			if (seconds < 10) {
-				seconds = '0'+seconds
-			}
+			if (days < 10) days = '0' + days;
+			if (hours < 10) hours = '0' + hours;
+			if (minutes < 10) minutes = '0' + minutes;
+			if (seconds < 10) seconds = '0' + seconds;
 		}
-		var clockHtml = days + YCD_STICKY_ARGS.days+" " + hours + YCD_STICKY_ARGS.hours+ " " + minutes + YCD_STICKY_ARGS.minutes+" " + seconds + YCD_STICKY_ARGS.seconds;
+	
+		// Build clockHtml dynamically based on enabled units
+		var clockParts = [];
+		if (enableDays) clockParts.push(days + YCD_STICKY_ARGS.days);
+		if (enableHours) clockParts.push(hours + YCD_STICKY_ARGS.hours);
+		if (enableMinutes) clockParts.push(minutes + YCD_STICKY_ARGS.minutes);
+		if (enableSeconds) clockParts.push(seconds + YCD_STICKY_ARGS.seconds);
+	
+		var clockHtml = clockParts.join(' ');
 		stickyClock.html(clockHtml);
-
+	
 		if (distance < 0) {
 			clearInterval(x);
 			that.endBehavior(stickyClock, settings);
 		}
 	};
+	
 	var x = setInterval(function() {
 		runTimer();
 	}, 1000);

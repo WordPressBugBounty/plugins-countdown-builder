@@ -1,6 +1,13 @@
 <?php
 use ycd\MultipleChoiceButton;
 use ycd\AdminHelper;
+$enableDays = $typeObj->getOptionValue('ycd-sticky-enable-days');
+$enableHours = $typeObj->getOptionValue('ycd-sticky-enable-hours');
+$enableMinutes = $typeObj->getOptionValue('ycd-sticky-enable-minutes');
+$enableSeconds = $typeObj->getOptionValue('ycd-sticky-enable-seconds');
+if (!$enableDays && !$enableHours && !$enableMinutes && !$enableSeconds) {
+	$enableDays = $enableHours = $enableMinutes = $enableSeconds = 'checked';
+}
 ?>
 <div class="ycd-multichoice-wrapper">
 	<?php
@@ -27,14 +34,110 @@ use ycd\AdminHelper;
 	</div>
 </div>
 <div id="ycd-sticky-countdown-default" class="ycd-sub-option ycd-hide">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row form-group">
+				<div class="col-md-6">
+					<label for="ycd-sticky-enable-days"><?php _e('Days', YCD_TEXT_DOMAIN); ?></label>
+				</div>
+				<div class="col-md-6">
+					<label class="ycd-switch">
+						<input type="checkbox" id="ycd-sticky-enable-days" data-time-type="days" name="ycd-sticky-enable-days" class="ycd-accordion-checkbox js-ycd-time-status" <?php echo esc_attr($enableDays); ?>>
+						<span class="ycd-slider ycd-round"></span>
+					</label>
+				</div>
+			</div>
+			<div class="ycd-accordion-content ycd-hide-content">
+				<div class="row form-group">
+					<div class="col-md-6">
+						<label for="ycd-sticky-countdown-days"><?php _e('label', YCD_TEXT_DOMAIN); ?></label>
+					</div>
+					<div class="col-md-6">	
+						<input type="text" id="ycd-sticky-countdown-days" name="ycd-sticky-countdown-days" class="form-control button-padding" value="<?php echo esc_attr($this->getOptionValue('ycd-sticky-countdown-days')); ?>">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="row form-group">
+				<div class="col-md-6">
+					<label for="ycd-sticky-enable-hours"><?php _e('Hours', YCD_TEXT_DOMAIN); ?></label>
+				</div>
+				<div class="col-md-6">
+					<label class="ycd-switch">
+						<input type="checkbox" id="ycd-sticky-enable-hours" data-time-type="hours" name="ycd-sticky-enable-hours" class="ycd-accordion-checkbox js-ycd-time-status" <?php echo esc_attr($enableHours); ?>>
+						<span class="ycd-slider ycd-round"></span>
+					</label>
+				</div>
+			</div>
+			<div class="ycd-accordion-content ycd-hide-content">
+				<div class="row form-group">
+					<div class="col-md-6">
+						<label for="ycd-sticky-countdown-hours"><?php _e('label', YCD_TEXT_DOMAIN); ?></label>
+					</div>
+					<div class="col-md-6">	
+						<input type="text" id="ycd-sticky-countdown-hours" name="ycd-sticky-countdown-hours" class="form-control button-padding" value="<?php echo esc_attr($this->getOptionValue('ycd-sticky-countdown-hours')); ?>">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<div class="row form-group">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row form-group">
+				<div class="col-md-6">
+					<label for="ycd-sticky-enable-minutes"><?php _e('Minutes', YCD_TEXT_DOMAIN); ?></label>
+				</div>
+				<div class="col-md-6">
+					<label class="ycd-switch">
+						<input type="checkbox" id="ycd-sticky-enable-minutes" data-time-type="minutes" name="ycd-sticky-enable-minutes" class="ycd-accordion-checkbox js-ycd-time-status" <?php echo esc_attr($enableMinutes); ?>>
+						<span class="ycd-slider ycd-round"></span>
+					</label>
+				</div>
+			</div>
+			<div class="ycd-accordion-content ycd-hide-content">
+				<div class="row form-group">
+					<div class="col-md-6">
+						<label for="ycd-sticky-countdown-minutes"><?php _e('label', YCD_TEXT_DOMAIN); ?></label>
+					</div>
+					<div class="col-md-6">	
+						<input type="text" id="ycd-sticky-countdown-minutes" name="ycd-sticky-countdown-minutes" class="form-control button-padding" value="<?php echo esc_attr($this->getOptionValue('ycd-sticky-countdown-minutes')); ?>">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="row form-group">
+				<div class="col-md-6">
+					<label for="ycd-sticky-enable-seconds"><?php _e('Seconds', YCD_TEXT_DOMAIN); ?></label>
+				</div>
+				<div class="col-md-6">
+					<label class="ycd-switch">
+						<input type="checkbox" id="ycd-sticky-enable-seconds" data-time-type="seconds" name="ycd-sticky-enable-seconds" class="ycd-accordion-checkbox js-ycd-time-status" <?php echo esc_attr($enableSeconds); ?>>
+						<span class="ycd-slider ycd-round"></span>
+					</label>
+				</div>
+			</div>
+			<div class="ycd-accordion-content ycd-hide-content">
+				<div class="row form-group">
+					<div class="col-md-6">
+						<label for="ycd-sticky-countdown-seconds"><?php _e('label', YCD_TEXT_DOMAIN); ?></label>
+					</div>
+					<div class="col-md-6">	
+						<input type="text" id="ycd-sticky-countdown-seconds" name="ycd-sticky-countdown-seconds" class="form-control button-padding" value="<?php echo esc_attr($this->getOptionValue('ycd-sticky-countdown-seconds')); ?>">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+			
+	<!-- <div class="row form-group">
 		<div class="col-md-4">
 			<label class="ycd-label-of-input"><?php _e('Texts', YCD_TEXT_DOMAIN); ?></label>
 		</div>
 		<div class="col-md-2">
 			<label for="ycd-sticky-countdown-days" class="yrm-label"><?php _e('Days', YCD_TEXT_DOMAIN); ?></label>
-			<input type="text" id="ycd-sticky-countdown-days" name="ycd-sticky-countdown-days" class="form-control button-padding" value="<?php echo esc_attr($this->getOptionValue('ycd-sticky-countdown-days')); ?>">
 		</div>
 		<div class="col-md-2">
 			<label for="ycd-sticky-countdown-hours" class="yrm-label"><?php _e('Hours', YCD_TEXT_DOMAIN); ?></label>
@@ -48,7 +151,7 @@ use ycd\AdminHelper;
 			<label for="ycd-sticky-countdown-seconds" class="yrm-label"><?php _e('Seconds', YCD_TEXT_DOMAIN); ?></label>
 			<input type="text" id="ycd-sticky-countdown-seconds" name="ycd-sticky-countdown-seconds" class="form-control button-padding" value="<?php echo esc_attr($this->getOptionValue('ycd-sticky-countdown-seconds')); ?>">
 		</div>
-	</div>
+	</div> -->
 	<div class="row form-group">
 		<div class="col-md-6">
 			<label class="ycd-label-of-input"><?php _e('Color', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html); ?></label>
