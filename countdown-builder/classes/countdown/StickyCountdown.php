@@ -108,6 +108,7 @@ class StickyCountdown extends Countdown {
 		$borderColor = $this->getOptionValue('ycd-sticky-button-border-color');
 
 		$sectionsOrder = $this->getOptionValue('ycd-sticky-countdown-sections');
+		$sectionsOrder = apply_filters('ycdStictySectionsOrder', $sectionsOrder, $this);
 		$sectionsOrderArray = explode('-', $sectionsOrder);
 		$countCols = count($sectionsOrderArray);
 		$sectionsWidth = '33';
@@ -301,6 +302,7 @@ class StickyCountdown extends Countdown {
 		$textContent = $this->getOptionValue('ycd-sticky-text');
 		$buttonText = $this->getOptionValue('ycd-sticky-button-text');
 		$sectionsOrder = $this->getOptionValue('ycd-sticky-countdown-sections');
+		$sectionsOrder = apply_filters('ycdStictySectionsOrder', $sectionsOrder, $this);
 		$sectionsOrderArray = explode('-', $sectionsOrder);
 		
 		$closeSectionHtml = $this->getCloseSectionHTML();

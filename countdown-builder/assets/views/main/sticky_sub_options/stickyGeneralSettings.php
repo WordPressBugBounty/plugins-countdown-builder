@@ -54,6 +54,30 @@ use ycd\MultipleChoiceButton;
 </div>
 <div class="row form-group">
 	<div class="col-md-6">
+		<label class="ycd-label-of-input" for="ycd-sticky-enable-sections"><?php _e('Mobile Sections orders', YCD_TEXT_DOMAIN);  echo wp_kses($proSpan, $allowed_html); ?></label>
+	</div>
+	<div class="col-md-5 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
+		<label class="ycd-switch">
+			<input type="checkbox" id="ycd-sticky-enable-sections" class="ycd-accordion-checkbox" name="ycd-sticky-enable-sections" <?php echo esc_attr($this->getOptionValue('ycd-sticky-enable-sections')); ?>>
+			<span class="ycd-slider ycd-round"></span>
+		</label>
+	</div>
+</div>
+<div class="ycd-accordion-content ycd-hide-content">
+	<div class="row form-group">
+		<div class="col-md-6">
+			<label class="ycd-label-of-input"><?php _e('Sections order', YCD_TEXT_DOMAIN); ?></label>
+		</div>
+		<div class="col-md-5">
+			<?php
+			$contdownSections = AdminHelper::selectBox($stickySectionsOrder, esc_attr($this->getOptionValue('ycd-sticky-countdown-mobile-sections')), array('name' => 'ycd-sticky-countdown-mobile-sections', 'class' => 'js-ycd-select'));
+			echo wp_kses($contdownSections, $allowed_html);
+			?>
+		</div>
+	</div>
+</div>
+<div class="row form-group">
+	<div class="col-md-6">
 		<label class="ycd-label-of-input"><?php _e('Background color', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html); ?></label>
 	</div>
 	<div class="col-md-5 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">

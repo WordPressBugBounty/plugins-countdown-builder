@@ -371,6 +371,8 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-sticky-countdown-sections', 'type' => 'text', 'defaultValue' => 'Text-Countdown-Button');
 		$options[] = array('name' => 'ycd-sticky-enable-double-digits', 'type' => 'checkbox', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-sticky-enable-footer', 'type' => 'checkbox', 'defaultValue' => '');
+		$options[] = array('name' => 'ycd-sticky-enable-sections', 'type' => 'checkbox', 'defaultValue' => '');
+		$options[] = array('name' => 'ycd-sticky-countdown-mobile-sections', 'type' => 'text', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-sticky-enable-close', 'type' => 'checkbox', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-sticky-close-text', 'type' => 'text', 'defaultValue' =>  __('Close', YCD_TEXT_DOMAIN));
 		$options[] = array('name' => 'ycd-sticky-expire-behavior', 'type' => 'text', 'defaultValue' =>  'redirectToURL');
