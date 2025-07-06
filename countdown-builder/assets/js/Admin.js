@@ -46,7 +46,21 @@ YcdAdmin.prototype.init = function() {
     this.deleteAjaxRequest();
 
     this.featuresSelect();
+
+	/*Simple countdown js*/
+	this.enableUniteBorder();
 };
+
+YcdAdmin.prototype.enableUniteBorder = function() {
+	jQuery('#ycd-simple-enable-unite-border').bind('change', function() {
+		if (jQuery(this).is(":checked")) {
+			jQuery(".js-simple-timer-dotes").val("").change();
+		}
+		else {
+			jQuery(".js-simple-timer-dotes").val(":").change();
+		}
+	})
+}
 
 YcdAdmin.prototype.featuresSelect = function() {
 

@@ -267,7 +267,13 @@ YcdSimpleCountdown.prototype.changeDotes = function () {
 
 	dotesSelect.bind('change', function() {
 		var selectedValue = jQuery(this).val();
-		jQuery('.ycd-simple-timer-dots ').text(selectedValue);
+		if (selectedValue == '') {
+			jQuery('.ycd-simple-timer-dots').hide()
+		}
+		else {
+			jQuery('.ycd-simple-timer-dots').show()
+		}
+		jQuery('.ycd-simple-timer-dots').text(selectedValue);
 	})
 }
 
@@ -445,8 +451,18 @@ YcdSimpleCountdown.prototype.addBorderStyles = function() {
 	var uniteMurginRight = jQuery("#ycd-simple-unite-margin-right").val();
 	var uniteMurginBottom = jQuery("#ycd-simple-unite-margin-bottom").val();
 	var uniteMurginLeft = jQuery("#ycd-simple-unite-margin-left").val();
+	
+	var unitePaddingTop = jQuery("#ycd-simple-unite-padding-top").val();
+	var unitePaddingRight = jQuery("#ycd-simple-unite-padding-right").val();
+	var unitePaddingBottom = jQuery("#ycd-simple-unite-padding-bottom").val();
+	var unitePaddingLeft = jQuery("#ycd-simple-unite-padding-left").val();
 
 	jQuery(".ycd-simple-current-unite-wrapper").css({
+		paddingTop: unitePaddingTop,
+		paddingRight: unitePaddingRight,
+		paddingBottom: unitePaddingBottom,
+		paddingLeft: unitePaddingLeft,
+
 		marginTop: uniteMurginTop,
 		marginRight: uniteMurginRight,
 		marginBottom: uniteMurginBottom,
@@ -495,6 +511,9 @@ YcdSimpleCountdown.prototype.changeSwithchBorder = function() {
 		that.addBorderStyles();
 	})
 	jQuery('.ycd-unite-margin').bind('change', function() {
+		that.addBorderStyles();
+	})
+	jQuery('.ycd-unite-padding').bind('change', function() {
 		that.addBorderStyles();
 	})
 }

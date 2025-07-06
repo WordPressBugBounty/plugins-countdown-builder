@@ -104,10 +104,7 @@ class SimpleCountdown extends Countdown
         $borderColor = $this->getOptionValue('ycd-simple-unite-border-color');
         $uniteWidth = $this->getOptionValue('ycd-simple-unite-width');
 
-        $uniteMarginTop = $this->getOptionValue('ycd-simple-unite-margin-top');
-        $uniteMarginRight = $this->getOptionValue('ycd-simple-unite-margin-right');
-        $uniteMarginBottom = $this->getOptionValue('ycd-simple-unite-margin-bottom');
-        $uniteMarginLeft = $this->getOptionValue('ycd-simple-unite-margin-left');
+
 
         ob_start();
         ?>
@@ -125,9 +122,6 @@ class SimpleCountdown extends Countdown
             }
             .ycd-simple-content-wrapper-<?php echo (int)$id; ?> {
 	            text-align: <?php esc_attr_e($horizontalAlign);?>;
-            }
-            .ycd-simple-content-wrapper-<?php echo (int)$id; ?> .ycd-simple-current-unite-wrapper {
-                margin: <?php echo esc_attr($uniteMarginTop).' '.esc_attr($uniteMarginRight).' '.esc_attr($uniteMarginBottom).' '.esc_attr($uniteMarginLeft);?>
             }
             <?php if ($enableBorder): ?>
                 .ycd-simple-current-unite {width: 100%;}

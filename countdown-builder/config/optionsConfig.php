@@ -410,6 +410,12 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-simple-unite-margin-right', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
 		$options[] = array('name' => 'ycd-simple-unite-margin-bottom', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
 		$options[] = array('name' => 'ycd-simple-unite-margin-left', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
+
+		$options[] = array('name' => 'ycd-simple-unite-padding-top', 'type' => 'text', 'defaultValue' => __('10px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-padding-right', 'type' => 'text', 'defaultValue' => __('10px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-padding-bottom', 'type' => 'text', 'defaultValue' => __('10px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-padding-left', 'type' => 'text', 'defaultValue' => __('10px', YCD_TEXT_DOMAIN));
+
 		$options[] = array('name' => 'ycd-simple-timer-dotes', 'type' => 'text', 'defaultValue' => ':');
 		$options[] = array('name' => 'ycd-simple-timer-horizontal-align', 'type' => 'text', 'defaultValue' => 'center');
 
