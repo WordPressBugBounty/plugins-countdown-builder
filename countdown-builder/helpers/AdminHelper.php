@@ -539,7 +539,8 @@ class AdminHelper {
 					'value' => 'schedule3'
 				),
 				'label' => array(
-					'name' => __('Upcoming Day Of Week (Recurring)', YCD_TEXT_DOMAIN)
+					'name' => __('Upcoming Day Of Week (Recurring)', YCD_TEXT_DOMAIN),
+					'infoPreview' => "proPreview/recuring.png",
 				)
 			);
 			$countdownDateTypeFields[] = array(

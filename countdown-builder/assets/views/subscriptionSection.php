@@ -1,6 +1,9 @@
 <?php
 use ycd\AdminHelper;
-$id = (int)$_GET['post'];
+$id = 0;
+if (!empty($_GET['post'])) {
+    $id = $_GET['post'];
+}
 $key = "send_newslatter_".$id;
 $sent = get_option($key);
 $newslatters = array();
