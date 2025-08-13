@@ -340,6 +340,7 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-countdown-floating-close-text-status', 'type' => 'checkbox', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-countdown-floating-close-text', 'type' => 'text', 'defaultValue' => 'Close');
 		$options[] = array('name' => 'ycd-countdown-floating-text-size', 'type' => 'text', 'defaultValue' => '20px');
+		$options[] = array('name' => 'ycd-countdown-floating-font-weight', 'type' => 'text', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-countdown-floating-padding-top', 'type' => 'text', 'defaultValue' => '0px');
 		$options[] = array('name' => 'ycd-countdown-floating-padding-right', 'type' => 'text', 'defaultValue' => '0px');
 		$options[] = array('name' => 'ycd-countdown-floating-padding-bottom', 'type' => 'text', 'defaultValue' => '0px');
@@ -411,10 +412,10 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-simple-unite-margin-bottom', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
 		$options[] = array('name' => 'ycd-simple-unite-margin-left', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
 
-		$options[] = array('name' => 'ycd-simple-unite-padding-top', 'type' => 'text', 'defaultValue' => __('10px', YCD_TEXT_DOMAIN));
-		$options[] = array('name' => 'ycd-simple-unite-padding-right', 'type' => 'text', 'defaultValue' => __('10px', YCD_TEXT_DOMAIN));
-		$options[] = array('name' => 'ycd-simple-unite-padding-bottom', 'type' => 'text', 'defaultValue' => __('10px', YCD_TEXT_DOMAIN));
-		$options[] = array('name' => 'ycd-simple-unite-padding-left', 'type' => 'text', 'defaultValue' => __('10px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-padding-top', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-padding-right', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-padding-bottom', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-padding-left', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
 
 		$options[] = array('name' => 'ycd-simple-timer-dotes', 'type' => 'text', 'defaultValue' => ':');
 		$options[] = array('name' => 'ycd-simple-timer-horizontal-align', 'type' => 'text', 'defaultValue' => 'center');

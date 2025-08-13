@@ -91,7 +91,6 @@ YcgGeneral.prototype.getSeconds = function (options) {
 	if (this.checkWooCondition(options)) {
 		return 0;
 	}
-
 	if(options['ycd-countdown-date-type'] == 'dueDate') {
 		var val = options['ycd-date-time-picker']+':00';
 		val = val.replace(/-/g, '/');

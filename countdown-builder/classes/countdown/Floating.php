@@ -23,6 +23,7 @@ class Floating {
 		$left = 'auto';
 		$additionalStyles = '';
 		$fontSize = 'inherit';
+		$fontWeight = 'inherit';
 		$contentBgColor = 'inherit';
 
 		if(in_array('top', $explode)) {
@@ -54,6 +55,9 @@ class Floating {
 		if ($typeObj->getOptionValue('ycd-countdown-floating-text-size')) {
 			$fontSize = $typeObj->getOptionValue('ycd-countdown-floating-text-size');
 		}
+		if ($typeObj->getOptionValue('ycd-countdown-floating-font-weight')) {
+			$fontWeight = $typeObj->getOptionValue('ycd-countdown-floating-font-weight');
+		}
 		if ($typeObj->getOptionValue('ycd-countdown-floating-text-content-bg-color')) {
 			$contentBgColor = $typeObj->getOptionValue('ycd-countdown-floating-text-content-bg-color');
 		}
@@ -77,6 +81,7 @@ class Floating {
 				text-align: center; 
 				cursor: pointer;
 				font-size: ".esc_attr($fontSize).";
+				font-weight: ".esc_attr($fontWeight).";
 				color: ".esc_attr($color)."; 
 		'>
 			<span 

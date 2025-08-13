@@ -130,6 +130,16 @@
 	</div>
 	<div class="row form-group">
 		<div class="col-md-6">
+			<label for="ycd-countdown-floating-font-weight" class="ycd-label-of-select"><?php _e('Font Weight', YCD_TEXT_DOMAIN); ?></label>
+		</div>
+		<div class="col-md-6">
+			<?php $fontWeight = AdminHelper::selectBox($defaultData['font-weight'], esc_attr($this->getOptionValue('ycd-countdown-floating-font-weight')), array('name' => 'ycd-countdown-floating-font-weight', 'class' => 'js-ycd-select js-countdown-font-weight'));
+				echo wp_kses($fontWeight, $allowed_html);
+			?>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-6">
 			<label for="ycd-countdown-floating-text-color" class=""><?php _e('Text color', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html); ?></label>
 		</div>
 		<div class="col-md-6 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
