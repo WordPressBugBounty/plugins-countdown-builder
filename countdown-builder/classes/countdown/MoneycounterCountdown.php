@@ -21,7 +21,9 @@ class MoneycounterCountdown extends Countdown {
     public function includeStyles() {
 		$this->includeGeneralScripts();
 		wp_enqueue_script("jquery-ui-draggable");
-		ScriptsIncluder::registerScript('moneyCounter.js', array('dirUrl' => YCD_COUNTDOWN_JS_URL.'/'));
+		ScriptsIncluder::registerScript('YcdGeneral.js', array('dirUrl' => YCD_COUNTDOWN_JS_URL.'/'));
+		ScriptsIncluder::enqueueScript('YcdGeneral.js');
+		ScriptsIncluder::registerScript('moneyCounter.js', array('dirUrl' => YCD_COUNTDOWN_JS_URL.'/', 'dep'=>'YcdGeneral.js'));
 		ScriptsIncluder::enqueueScript('moneyCounter.js');
 	}
 
@@ -29,6 +31,8 @@ class MoneycounterCountdown extends Countdown {
    
         $this->includeStyles();
         $id = $this->getId();
+        $options = $this->getSavedData();
+        $options = json_encode($options);
   
         ob_start();
         $inlineStyle = 'font-size: '.esc_attr($this->getOptionValue('ycd-money-font-size')).';';
@@ -41,6 +45,7 @@ class MoneycounterCountdown extends Countdown {
                 data-decimals="<?php echo esc_attr($this->getOptionValue('ycd-money-decimal-places')); ?>"
                 data-prefix="<?php echo esc_attr($this->getOptionValue('ycd-money-prefix')); ?>"
                 data-target="<?php echo esc_attr($this->getOptionValue('ycd-money-target-value')); ?>"
+                data-options="<?php echo esc_attr($options);?>"
                 style="<?php echo esc_attr($inlineStyle); ?>"
             >
                 Loading...

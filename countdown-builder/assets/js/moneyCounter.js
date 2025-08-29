@@ -12,6 +12,8 @@ function YcdMomenyCounter() {
     this.preview();
 }
 
+YcdMomenyCounter.prototype = new YcgGeneral();
+
 YcdMomenyCounter.prototype.init = function() {
     const counterEl = document.getElementById('ycd-money-counter');
     if (!counterEl) return;
@@ -19,7 +21,7 @@ YcdMomenyCounter.prototype.init = function() {
     var initialValue = parseFloat(counterEl.getAttribute('data-initial')) || 0;
     var increasePerSec = parseFloat(counterEl.getAttribute('data-increase')) || 0;
     var startDateStr = counterEl.getAttribute('data-start-date');
-    console.log("startDateStr ", startDateStr)
+  
     var decimals = parseInt(counterEl.getAttribute('data-decimals')) || 0;
     var prefix = counterEl.getAttribute('data-prefix') || '';
     var targetValue = parseFloat(counterEl.getAttribute('data-target')) || null;
@@ -31,6 +33,7 @@ YcdMomenyCounter.prototype.init = function() {
     this.prefix = prefix;
     this.targetValue = targetValue;
     this.counterEl = counterEl;
+    this.options = JSON.parse(counterEl.getAttribute('data-options'));
 
     const fontSize = counterEl.style.fontSize;
     counterEl.style.fontSize = fontSize;
@@ -120,6 +123,11 @@ YcdMomenyCounter.prototype.run = function() {
             clearInterval(timer);
         }
         counterEl.innerHTML = prefix + formatNumber(currentValue);
+    }
+
+    if (targetValue && currentValue >= targetValue) {
+        this.endBehavior(counterEl, this.options)
+        currentValue = targetValue;
     }
 
     counterEl.innerHTML = prefix + formatNumber(currentValue);
