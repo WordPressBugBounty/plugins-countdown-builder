@@ -264,6 +264,16 @@ if (YCD_PKG_VERSION > YCD_FREE_VERSION) {
                         </div>
                     </div>
                 </div>
+                <div class="row form-group">
+                    <div class="col-md-5">
+                        <label for="ycd-countdown-years-numbers-color" class=""><?php _e('numbers color', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html); ?></label>
+                    </div>
+                    <div class="col-md-7 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
+                        <div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
+                            <input type="text" id="ycd-countdown-years-numbers-color" data-time-type="Years" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-countdown-years-numbers-color" class=" minicolors-input form-control js-ycd-time-numbers-color" value="<?php echo esc_attr($typeObj->getOptionValue("ycd-countdown-years-numbers-color")); ?>">
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- Countdown formats years end -->
 
@@ -306,6 +316,16 @@ if (YCD_PKG_VERSION > YCD_FREE_VERSION) {
                     <div class="col-md-7 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
                         <div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
                             <input type="text" id="ycd-countdown-months-text-color" data-time-type="Months" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-countdown-months-text-color" class=" minicolors-input form-control js-ycd-time-text-color" value="<?php echo esc_attr($countdownMonthsTextColor); ?>">
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-5">
+                        <label for="ycd-countdown-months-numbers-color" class=""><?php _e('numbers color', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html); ?></label>
+                    </div>
+                    <div class="col-md-7 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
+                        <div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
+                            <input type="text" id="ycd-countdown-months-numbers-color" data-time-type="Months" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-countdown-months-numbers-color" class=" minicolors-input form-control js-ycd-time-numbers-color" value="<?php echo esc_attr($typeObj->getOptionValue("ycd-countdown-months-numbers-color")); ?>">
                         </div>
                     </div>
                 </div>
@@ -355,6 +375,16 @@ if (YCD_PKG_VERSION > YCD_FREE_VERSION) {
                         </div>
                     </div>
                 </div>
+                <div class="row form-group">
+                    <div class="col-md-5">
+                        <label for="ycd-countdown-days-numbers-color" class=""><?php _e('numbers color', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html); ?></label>
+                    </div>
+                    <div class="col-md-7 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
+                        <div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
+                            <input type="text" id="ycd-countdown-days-numbers-color" data-time-type="Days" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-countdown-days-numbers-color" class=" minicolors-input form-control js-ycd-time-numbers-color" value="<?php echo esc_attr($typeObj->getOptionValue("ycd-countdown-days-numbers-color")); ?>">
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Countdown formats Days end -->
@@ -401,6 +431,16 @@ if (YCD_PKG_VERSION > YCD_FREE_VERSION) {
                         </div>
                     </div>
                 </div>
+                <div class="row form-group">
+                    <div class="col-md-5">
+                        <label for="ycd-countdown-hours-numbers-color" class=""><?php _e('numbers color', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html); ?></label>
+                    </div>
+                    <div class="col-md-7 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
+                        <div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
+                            <input type="text" id="ycd-countdown-hours-numbers-color" data-time-type="Hours" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-countdown-hours-numbers-color" class=" minicolors-input form-control js-ycd-time-numbers-color" value="<?php echo esc_attr($typeObj->getOptionValue("ycd-countdown-hours-numbers-color")); ?>">
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Countdown formats Hours end -->
@@ -444,6 +484,16 @@ if (YCD_PKG_VERSION > YCD_FREE_VERSION) {
                     <div class="col-md-7 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
                         <div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
                             <input type="text" id="ycd-countdown-minutes-text-color" data-time-type="Minutes" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-countdown-minutes-text-color" class=" minicolors-input form-control js-ycd-time-text-color" value="<?php echo esc_attr($countdownMinutesTextColor); ?>">
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-5">
+                        <label for="ycd-countdown-minutes-numbers-color" class=""><?php _e('numbers color', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html); ?></label>
+                    </div>
+                    <div class="col-md-7 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
+                        <div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
+                            <input type="text" id="ycd-countdown-minutes-numbers-color" data-time-type="Minutes" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-countdown-minutes-numbers-color" class=" minicolors-input form-control js-ycd-time-numbers-color" value="<?php echo esc_attr($typeObj->getOptionValue("ycd-countdown-minutes-numbers-color")); ?>">
                         </div>
                     </div>
                 </div>
@@ -520,6 +570,16 @@ if (YCD_PKG_VERSION > YCD_FREE_VERSION) {
                         <div class="col-md-7 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
                             <div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
                                 <input type="text" id="ycd-countdown-last-seconds-color"  placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-countdown-last-seconds-color" class="generalColors" value="<?php echo esc_attr($typeObj->getOptionValue('ycd-countdown-last-seconds-color')); ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-5">
+                            <label for="ycd-countdown-seconds-numbers-color" class=""><?php _e('numbers color', YCD_TEXT_DOMAIN); echo wp_kses($proSpan, $allowed_html); ?></label>
+                        </div>
+                        <div class="col-md-7 ycd-option-wrapper<?php echo esc_attr($isPro); ?>">
+                            <div class="minicolors minicolors-theme-default minicolors-position-bottom minicolors-position-left">
+                                <input type="text" id="ycd-countdown-seconds-numbers-color" data-time-type="Seconds" placeholder="<?php _e('Select color', YCD_TEXT_DOMAIN)?>" name="ycd-countdown-seconds-numbers-color" class=" minicolors-input form-control js-ycd-time-numbers-color" value="<?php echo esc_attr($typeObj->getOptionValue("ycd-countdown-seconds-numbers-color")); ?>">
                             </div>
                         </div>
                     </div>

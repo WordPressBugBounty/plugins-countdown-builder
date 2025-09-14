@@ -272,6 +272,7 @@ YcdCountdown.prototype.livePreview = function() {
 	this.changeFontStyle();
 	this.changeFontFamily();
 	this.changeTextColor();
+	this.changeNumbersColor();
 	this.changePadding();
 	this.changeAlignment();
 	this.changeNumberStyles();
@@ -439,7 +440,25 @@ YcdCountdown.prototype.changeTextColor = function() {
 		change: function() {
 			var color = jQuery(this).val();
 			var type = jQuery(this).data('time-type');
-			jQuery('.textDiv_'+type+' h4, '+'.textDiv_'+type+' span').css({color: color});
+			jQuery('.textDiv_'+type+' h4').css({color: color});
+		}
+	});
+};
+
+YcdCountdown.prototype.changeNumbersColor = function() {
+	var textColor = jQuery('.js-ycd-time-numbers-color');
+
+	if(!textColor.length) {
+		return false;
+	}
+
+	textColor.minicolors({
+		format: 'rgb',
+		opacity: 1,
+		change: function() {
+			var color = jQuery(this).val();
+			var type = jQuery(this).data('time-type');
+			jQuery('.textDiv_'+type+' span').css({color: color});
 		}
 	});
 };

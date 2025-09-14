@@ -88,14 +88,14 @@ class YcdCountdownConfig
 		self::addDefine('YCD_EXTENSION_VERSION', 99);
 		require_once(dirname(__FILE__).'/config-pkg.php');
 		
-		$versionText = '3.0.0';
+		$versionText = '3.0.1';
 		if (YCD_PKG_VERSION != YCD_FREE_VERSION) {
-			$versionText = '2.8.8';
+			$versionText = '2.8.9';
         }
 		
 		self::addDefine('YCD_VERSION_TEXT', $versionText);
-		self::addDefine('YCD_LAST_UPDATE', 'Aug 30');
-		self::addDefine('YCD_NEXT_UPDATE', 'Sep 11');
+		self::addDefine('YCD_LAST_UPDATE', 'Sep 13');
+		self::addDefine('YCD_NEXT_UPDATE', 'Sep 28');
 	}
 
 	public static function displaySettings()

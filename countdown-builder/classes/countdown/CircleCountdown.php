@@ -94,11 +94,17 @@ class CircleCountdown extends Countdown {
 	    $fontFamilyNumber = $this->getFontFamilyByName('ycd-countdown-number-font');
 	    
 	    $yearsColor = $this->getOptionValue('ycd-countdown-years-text-color');
+	    $yearsNumberColor = $this->getOptionValue('ycd-countdown-years-numbers-color');
 	    $monthsColor = $this->getOptionValue('ycd-countdown-months-text-color');
+	    $monthsNumberColor = $this->getOptionValue('ycd-countdown-months-numbers-color');
 	    $daysTextColor = $this->getOptionValue('ycd-countdown-days-text-color');
+	    $daysNumberColor = $this->getOptionValue('ycd-countdown-days-numbers-color');
 	    $hoursTextColor = $this->getOptionValue('ycd-countdown-hours-text-color');
+	    $hoursNumberColor = $this->getOptionValue('ycd-countdown-hours-numbers-color');
 	    $minutesTextColor = $this->getOptionValue('ycd-countdown-minutes-text-color');
+	    $minutesNumberColor = $this->getOptionValue('ycd-countdown-minutes-numbers-color');
 	    $secondsTextColor = $this->getOptionValue('ycd-countdown-seconds-text-color');
+	    $secondsNumberColor = $this->getOptionValue('ycd-countdown-seconds-numbers-color');
 	    $circleAlignment = $this->getOptionValue('ycd-circle-alignment');
 	    $padding = esc_attr($this->getOptionValue('ycd-countdown-padding')).'px';
 
@@ -130,30 +136,41 @@ class CircleCountdown extends Countdown {
                 font-style: <?php echo esc_attr($fontStyleNumber); ?> !important;
                 font-family: <?php echo esc_attr($fontFamilyNumber); ?> !important;
             }
-            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Years h4,
-            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Years span {
+            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Years h4 {
                 color: <?php echo esc_attr($yearsColor); ?>
             }
-            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Months h4, 
-            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Months span {
+            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Years span {
+                color: <?php echo esc_attr($yearsNumberColor); ?>
+            }
+            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Months h4 {
                 color: <?php echo esc_attr($monthsColor); ?>
             }
-            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Days h4, 
-            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Days span {
+            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Months span {
+                color: <?php echo esc_attr($monthsNumberColor); ?>
+            }
+            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Days h4 {
                 color: <?php echo esc_attr($daysTextColor); ?>
             }
-            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Hours h4,
-            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Hours span {
+            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Days span {
+                color: <?php echo esc_attr($daysNumberColor); ?>
+            }
+            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Hours h4 {
                 color: <?php echo esc_attr($hoursTextColor); ?>
             }
-
-            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Minutes h4, 
-            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Minutes span {
+            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Hours span {
+                color: <?php echo esc_attr($hoursNumberColor); ?>
+            }
+            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Minutes h4 { 
                 color: <?php echo esc_attr($minutesTextColor); ?>
             }
-            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Seconds h4,
-            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Seconds span {
+            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Minutes span {
+                color: <?php echo esc_attr($minutesNumberColor); ?>
+            }
+            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Seconds h4 {
                 color: <?php echo esc_attr($secondsTextColor); ?>
+            }
+            #ycd-circle-<?php echo esc_attr($id); ?> .textDiv_Seconds span {
+                color: <?php echo esc_attr($secondsNumberColor); ?>
             }
             .ycd-circle-<?php echo esc_attr($id); ?>-wrapper {
                 text-align: <?php echo esc_attr($circleAlignment); ?>;

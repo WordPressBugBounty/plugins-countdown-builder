@@ -68,6 +68,10 @@ Yes you can, we have Circle and Flipclock countdown popups.
 You need to select the .zip file, there is no need to extract the zip file, just upload it.
 
 == Changelog ==
+= 3.0.1 =
+* Circle countdown numbers color change possibility
+* Backend improvements
+
 = 3.0.0 =
 * Fixed Money Contdown End Behavior
 

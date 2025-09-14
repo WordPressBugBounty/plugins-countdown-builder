@@ -322,6 +322,7 @@ input:checked + .ycd-slider:before {
 	display: inline-block;
 	color: red;
 	margin-left: 5px;
+	cursor: pointer;
 }
 
 .ycd-circle-popup-shortcode {
