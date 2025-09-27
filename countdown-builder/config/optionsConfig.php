@@ -409,7 +409,10 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-simple-seconds-text', 'type' => 'text', 'defaultValue' => __('Secs', YCD_TEXT_DOMAIN));
 		$options[] = array('name' => 'ycd-enable-simple-double-digits', 'type' => 'checkbox', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-text-to-top', 'type' => 'checkbox', 'defaultValue' => '');
-		$options[] = array('name' => 'ycd-simple-enable-unite-border', 'type' => 'checkbox', 'defaultValue' => '');
+		$options[] = array('name' => 'ycd-simple-timer-dotes', 'type' => 'text', 'defaultValue' => '');
+		$options[] = array('name' => 'ycd-simple-unite-border-type', 'type' => 'text', 'defaultValue' => 'solid');
+		$options[] = array('name' => 'ycd-simple-enable-unite-border', 'type' => 'checkbox', 'defaultValue' => 'on');
+		$options[] = array('name' => 'ycd-simple-unite-border-color', 'type' => 'text', 'defaultValue' => 'rgba(0,0,0,1)');
 		$options[] = array('name' => 'ycd-simple-unite-border-width', 'type' => 'text', 'defaultValue' => '1px');
 		$options[] = array('name' => 'ycd-simple-unite-border-radius', 'type' => 'text', 'defaultValue' => '10px');
 		$options[] = array('name' => 'ycd-simple-unite-margin-top', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
@@ -417,10 +420,10 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-simple-unite-margin-bottom', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
 		$options[] = array('name' => 'ycd-simple-unite-margin-left', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
 
-		$options[] = array('name' => 'ycd-simple-unite-padding-top', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
-		$options[] = array('name' => 'ycd-simple-unite-padding-right', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
-		$options[] = array('name' => 'ycd-simple-unite-padding-bottom', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
-		$options[] = array('name' => 'ycd-simple-unite-padding-left', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-padding-top', 'type' => 'text', 'defaultValue' => __('10px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-padding-right', 'type' => 'text', 'defaultValue' => __('10px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-padding-bottom', 'type' => 'text', 'defaultValue' => __('10px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-unite-padding-left', 'type' => 'text', 'defaultValue' => __('10px', YCD_TEXT_DOMAIN));
 
 		$options[] = array('name' => 'ycd-simple-timer-dotes', 'type' => 'text', 'defaultValue' => ':');
 		$options[] = array('name' => 'ycd-simple-timer-horizontal-align', 'type' => 'text', 'defaultValue' => 'center');
@@ -432,7 +435,7 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-simple-numbers-margin-bottom', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
 		$options[] = array('name' => 'ycd-simple-numbers-margin-left', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
 
-		$options[] = array('name' => 'ycd-simple-text-margin-top', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
+		$options[] = array('name' => 'ycd-simple-text-margin-top', 'type' => 'text', 'defaultValue' => __('5px', YCD_TEXT_DOMAIN));
 		$options[] = array('name' => 'ycd-simple-text-margin-right', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
 		$options[] = array('name' => 'ycd-simple-text-margin-bottom', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));
 		$options[] = array('name' => 'ycd-simple-text-margin-left', 'type' => 'text', 'defaultValue' => __('0px', YCD_TEXT_DOMAIN));

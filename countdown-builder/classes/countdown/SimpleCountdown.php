@@ -104,8 +104,6 @@ class SimpleCountdown extends Countdown
         $borderColor = $this->getOptionValue('ycd-simple-unite-border-color');
         $uniteWidth = $this->getOptionValue('ycd-simple-unite-width');
 
-
-
         ob_start();
         ?>
         <style>
@@ -126,7 +124,7 @@ class SimpleCountdown extends Countdown
             <?php if ($enableBorder): ?>
                 .ycd-simple-current-unite {width: 100%;}
                 .ycd-simple-content-wrapper-<?php echo (int)$id; ?> .ycd-simple-current-unite-wrapper {
-                    border: <?php echo esc_attr( $borderWidth);?> <?php echo esc_attr( $borderType);?> <?php echo esc_attr( $borderColor);?>;
+                    border: <?php echo esc_attr( $borderWidth);?> <?php echo esc_attr($borderType);?> <?php echo esc_attr( $borderColor);?>;
                     border-radius: <?php echo esc_attr($borderRadius); ?>;
                     <?php if (!empty($uniteWidth)): ?>
                     width: <?php echo esc_attr($uniteWidth); ?>;    
