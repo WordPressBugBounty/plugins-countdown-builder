@@ -243,7 +243,7 @@ class Filters {
 		        $defaults['countdownExpireTime']['fields'][$key]['attr']['class'] .= ' ycd-option-wrapper-pro';
             }
         }
-        $proDateTypes = apply_filters('ycdCountdownProDateType', array('schedule', 'schedule2', 'schedule3', 'wooCoupon'));
+        $proDateTypes = apply_filters('ycdCountdownProDateType', array('schedule', 'schedule2', 'schedule3', 'wooCoupon', 'evergreen'));
         foreach ($defaults['countdown-date-type']['fields'] as $key => $expire) {
             $currentValue = $expire['attr']['value'];
             if(in_array($currentValue, $proDateTypes)) {

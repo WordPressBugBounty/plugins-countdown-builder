@@ -317,6 +317,28 @@ if (!empty($couponsInfo['idAndDates'])) {
 	            </div>
 	        </div>
 	    </div>
+		<div id="ycd-date-evergreen" class="ycd-countdown-show-text ycd-hide">
+	        <div class="row form-group">
+	            <div class="col-md-4">
+	            </div>
+	            <div class="col-md-2">
+	                <label for="ycdCountdownEvergreenDays"><?php _e('Days', YCD_TEXT_DOMAIN); ?></label>
+	                <input type="number" name="ycd-countdown-evergreen-days" id="ycdCountdownEvergreenDays" min="0" class="form-control ycd-timer-time-settings" data-type="days" value="<?php echo esc_attr($this->getOptionValue('ycd-countdown-evergreen-days'))?>">
+	            </div>
+	            <div class="col-md-2">
+	                <label for="ycdCountdownEvergreenHours"><?php _e('Hrs', YCD_TEXT_DOMAIN); ?></label>
+	                <input type="number" name="ycd-countdown-evergreen-hours" id="ycdCountdownEvergreenHours" min="0" max="60" class="form-control ycd-timer-time-settings" data-type="hours" value="<?php echo esc_attr($this->getOptionValue('ycd-countdown-evergreen-hours'))?>">
+	            </div>
+	            <div class="col-md-2">
+	                <label for="ycdCountdownTimeMinutes"><?php _e('Mins', YCD_TEXT_DOMAIN); ?></label>
+	                <input type="number" name="ycd-countdown-evergreen-minutes" id="ycdCountdownEvergreenMinutes" min="0" max="60" class="form-control ycd-timer-time-settings" data-type="minutes" value="<?php echo esc_attr($this->getOptionValue('ycd-countdown-evergreen-minutes'))?>">
+	            </div>
+	            <div class="col-md-2">
+	                <label for="ycdCountdownTimeSeconds"><?php _e('Secs', YCD_TEXT_DOMAIN); ?></label>
+	                <input type="number" name="ycd-countdown-evergreen-seconds" id="ycdCountdownEvergreenSeconds" min="0" max="60" class="form-control ycd-timer-time-settings" data-type="seconds" value="<?php echo esc_attr($this->getOptionValue('ycd-countdown-evergreen-seconds'))?>">
+	            </div>
+	        </div>
+	    </div>
 		<div id="ycd-date-schedule3" class="ycd-countdown-show-text ycd-hide">
 			<div class="row form-group">
 				<div class="col-md-6">

@@ -2,7 +2,7 @@
 Contributors: adamskaat
 Tags: countdown, timer, countdown timer
 Requires at least: 3.8
-Tested up to: 6.8
+Tested up to: 6.9
 Stable tag: 2.7.8
 Requires PHP: 5.3
 License: GPLv2 or later
@@ -32,6 +32,7 @@ Countdown types
 * Clock 5
 * Clock 6
 * Clock 7
+* Evergreen countdown
 * Simple countdown
 * Sticky Countdown
 * Circle countdown & popup
@@ -68,6 +69,22 @@ Yes you can, we have Circle and Flipclock countdown popups.
 You need to select the .zip file, there is no need to extract the zip file, just upload it.
 
 == Changelog ==
+= 3.0.7 =
+* Admin side improrvements
+
+= 3.0.6 =
+* Fixed deprecated functionality to ensure full compatibility with PHP 8.4 version
+
+= 3.0.5 =
+* Admin side improvements
+
+= 3.0.4 =
+* Added Evergreen Countdown possibility
+* Code improvements
+
+= 3.0.3 =
+* Added floating button click sound
+
 = 3.0.2 =
 * Improved simple countdown default view
 * Added Flip clock countdown text font size 

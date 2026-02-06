@@ -8,6 +8,7 @@
 		$proSpan = '<span class="ycd-pro-span">'.__('pro', YCD_TEXT_DOMAIN).'</span>';
 	}
 	$allowed_html = AdminHelper::getAllowedTags();
+	$soundURL = $this->getOptionValue('ycd-countdown-enable-float-sound-url');
 ?>
 <div class="ycd-bootstrap-wrapper">
 	<div class="row form-group">
@@ -74,6 +75,31 @@
 			</div>
 			<div class="col-md-6">
 				<input name="ycd-countdown-floating-close-text" value="<?php esc_attr_e($this->getOptionValue('ycd-countdown-floating-close-text'));?>" id="ycd-countdown-floating-close-text" class="form-control">
+			</div>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-6">
+			<label for="ycd-countdown-enable-float-sound" class="ycd-label-of-switch"><?php _e('Enable sound', YCD_TEXT_DOMAIN); ?></label>
+		</div>
+		<div class="col-md-6">
+			<label class="ycd-switch">
+				<input type="checkbox" id="ycd-countdown-enable-float-sound" name="ycd-countdown-enable-float-sound" class="ycd-accordion-checkbox" <?php echo esc_attr($this->getOptionValue('ycd-countdown-enable-float-sound')); ?>>
+				<span class="ycd-slider ycd-round"></span>
+			</label>
+		</div>
+	</div>
+	<div class="row ycd-accordion-content ycd-hide-content form-group">
+		<div class="row form-group">
+			<div class="col-md-6">
+				<input id="js-upload-countdown-enable-sound" class="btn btn-sm" type="button" data-type="floating" value="<?php _e('Change sound', YCD_TEXT_DOMAIN); ?>">
+				<input type="button" data-default-song="<?php echo esc_attr($soundURL); ?>" data-type="floating" id="js-reset-float-sound-url" class="btn btn-sm btn-danger" value="<?php _e('Reset', YCD_TEXT_DOMAIN); ?>" style="margin-left: 10px;">
+			</div>
+			<div class="col-md-5">
+				<input type="text" id="js-float-click-sound" readonly="" class="form-control input-sm" name="ycd-countdown-enable-float-sound-url" value="<?php echo esc_url($soundURL); ?>">
+			</div>
+			<div class="col-md-1">
+				<span class="dashicons dashicons-controls-volumeon js-preview-sound" data-type="floating"></span>
 			</div>
 		</div>
 	</div>

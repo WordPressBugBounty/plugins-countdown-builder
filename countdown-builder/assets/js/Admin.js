@@ -570,7 +570,11 @@ YcdAdmin.prototype.soundPreview = function()  {
 
 	jQuery('.js-preview-sound').bind('click', function() {
 		var uploadFile = jQuery('#js-sound-open-url').val();
-		if (typeof lastSong == 'undefined') {
+		if (jQuery(this).data('type') == 'floating') {
+			uploadFile = jQuery('#js-float-click-sound').val();
+		}
+		
+ 		if (typeof lastSong == 'undefined') {
 			lastSong = new Audio (uploadFile);
 		}
 
@@ -604,7 +608,7 @@ YcdAdmin.prototype.soundPreview = function()  {
 		songValue = 1;
 	});
 
-	jQuery('#js-reset-to-default-song').click(function(e) {
+	jQuery('#js-reset-to-default-song, #js-reset-float-sound-url').click(function(e) {
 		e.preventDefault();
 
 		if(typeof lastSong != 'undefined') {
@@ -614,7 +618,12 @@ YcdAdmin.prototype.soundPreview = function()  {
 		songValue = 1;
 
 		var defaultSong = jQuery(this).data('default-song');
-		jQuery('#js-sound-open-url').val(defaultSong).change();
+		if (jQuery(this).data('type') == 'floating') {
+			jQuery('#js-float-click-sound').val(defaultSong).change();
+		}
+		else {
+			jQuery('#js-sound-open-url').val(defaultSong).change();
+		}
 	});
 };
 
@@ -632,7 +641,7 @@ YcdAdmin.prototype.resetSound = function() {
 };
 
 YcdAdmin.prototype.soundUpload = function() {
-	var uploadButton = jQuery('#js-upload-countdown-end-sound');
+	var uploadButton = jQuery('#js-upload-countdown-end-sound, #js-upload-countdown-enable-sound');
 
 	if(!uploadButton.length) {
 		return false;
@@ -640,6 +649,7 @@ YcdAdmin.prototype.soundUpload = function() {
 	var uploader;
 	uploadButton.bind('click', function(e) {
 		e.preventDefault();
+		var that = this;
 
 		if(uploader) {
 			uploader.open();
@@ -659,6 +669,9 @@ YcdAdmin.prototype.soundUpload = function() {
 		/* When a file is selected, grab the URL and set it as the text field's value */
 		uploader.on('select', function() {
 			var attachment = uploader.state().get('selection').first().toJSON();
+			if (jQuery(that).data('type') == 'floating') {
+				jQuery('#js-float-click-sound').val(attachment.url).change();
+			}
 			jQuery('#js-sound-open-url').val(attachment.url).change();
 		});
 		/* Open the uploader dialog */

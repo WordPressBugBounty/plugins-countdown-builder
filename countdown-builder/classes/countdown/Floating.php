@@ -89,6 +89,8 @@ class Floating {
 				data-change-status='".esc_attr($typeObj->getOptionValue('ycd-countdown-floating-close-text-status'))."'
 				data-close-text='".esc_attr($typeObj->getOptionValue('ycd-countdown-floating-close-text'))."'
 				data-text='".esc_attr($typeObj->getOptionValue('ycd-countdown-floating-text'))."'
+				data-sound-status='".esc_attr($typeObj->getOptionValue('ycd-countdown-enable-float-sound'))."'
+				data-sound-url='".esc_attr($typeObj->getOptionValue('ycd-countdown-enable-float-sound-url'))."'
 			>".esc_attr($typeObj->getOptionValue('ycd-countdown-floating-text'))."</span></div>";
 
 		$all = '<div class="ycd-floating-wrapper hidden-floating" style="

@@ -507,6 +507,19 @@ class AdminHelper {
 					'type' => 'radio',
 					'name' => 'ycd-countdown-date-type',
 					'class' => 'ycd-date-type',
+					'data-attr-href' => 'ycd-date-evergreen',
+					'value' => 'evergreen'
+				),
+				'label' => array(
+					'name' => __('Evergreen', YCD_TEXT_DOMAIN),
+					'infoPreview' => "proPreview/evergreen.png",
+				)
+			);
+			$countdownDateTypeFields[] = array(
+				'attr' => array(
+					'type' => 'radio',
+					'name' => 'ycd-countdown-date-type',
+					'class' => 'ycd-date-type',
 					'data-attr-href' => 'ycd-date-schedule',
 					'value' => 'schedule'
 				),

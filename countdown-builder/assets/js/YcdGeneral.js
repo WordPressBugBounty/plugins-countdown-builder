@@ -107,6 +107,9 @@ YcgGeneral.prototype.getSeconds = function (options) {
 	else if(options['ycd-countdown-date-type'] == 'schedule3') {
 		var seconds = YcdCountdownProFunctionality.schedule3(options);
 	}
+	else if(options['ycd-countdown-date-type'] == 'evergreen') {
+		var seconds = YcdCountdownProFunctionality.evergreen(options);
+	}
 	else if(options['ycd-countdown-date-type'] == 'wooCoupon') {
 		var val = options['ycd-woo-coupon-date'];
 		val.replace('/', '-')+' 00:00:00';
@@ -222,6 +225,13 @@ YcgGeneral.prototype.checkWooCondition = function (options) {
 YcgGeneral.floatingButton = function () {
 	jQuery(".ycd-floating-toggle").bind("click", function () {
 		var status = jQuery(this).data('change-status');
+		var soundStatus = jQuery(this).data('sound-status');
+
+		if (soundStatus) {
+			var song = new Audio (jQuery(this).data('sound-url'))
+			song.play();
+		}
+
 		if (jQuery(".ycd-floating-wrapper").hasClass('hidden-floating')) {
 			jQuery(".ycd-floating-wrapper").removeClass('hidden-floating').addClass('show-animation');
 			if (status) {

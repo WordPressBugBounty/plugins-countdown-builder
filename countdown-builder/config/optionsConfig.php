@@ -200,6 +200,10 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-countdown-duration-hours', 'type' => 'number', 'defaultValue' => 0);
 		$options[] = array('name' => 'ycd-countdown-duration-minutes', 'type' => 'number', 'defaultValue' => 0);
 		$options[] = array('name' => 'ycd-countdown-duration-seconds', 'type' => 'number', 'defaultValue' => 30);
+		$options[] = array('name' => 'ycd-countdown-evergreen-days', 'type' => 'number', 'defaultValue' => 0);
+		$options[] = array('name' => 'ycd-countdown-evergreen-hours', 'type' => 'number', 'defaultValue' => 0);
+		$options[] = array('name' => 'ycd-countdown-evergreen-minutes', 'type' => 'number', 'defaultValue' => 0);
+		$options[] = array('name' => 'ycd-countdown-evergreen-seconds', 'type' => 'number', 'defaultValue' => 30);
 
 		$options[] = array('name' => 'ycd-clock-timer-hours', 'type' => 'number', 'defaultValue' => 0);
 		$options[] = array('name' => 'ycd-clock-timer-minutes', 'type' => 'number', 'defaultValue' => 0);
@@ -261,6 +265,7 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-counties-names', 'type' => 'array', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-countdown-end-sound', 'type' => 'checkbox', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-countdown-end-sound-url', 'type' => 'text', 'defaultValue' => YCD_COUNTDOWN_LIB_URL.'alarm.mp3');
+		$options[] = array('name' => 'ycd-countdown-enable-float-sound-url', 'type' => 'text', 'defaultValue' => YCD_COUNTDOWN_LIB_URL.'click.mp3');
 		$options[] = array('name' => 'ycd-auto-newslatter', 'type' => 'text', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-enable-subscribe-form', 'type' => 'checkbox', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-enable-send-newslatter', 'type' => 'checkbox', 'defaultValue' => '');
@@ -342,6 +347,7 @@ class YcdCountdownOptionsConfig
 		$options[] = array('name' => 'ycd-countdown-floating-position-bottom', 'type' => 'text', 'defaultValue' => '0px');
 		$options[] = array('name' => 'ycd-countdown-floating-position-left', 'type' => 'text', 'defaultValue' => '0px');
 		$options[] = array('name' => 'ycd-countdown-floating-text', 'type' => 'text', 'defaultValue' => 'Click');
+		$options[] = array('name' => 'ycd-countdown-enable-float-sound', 'type' => 'checkbox', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-countdown-floating-close-text-status', 'type' => 'checkbox', 'defaultValue' => '');
 		$options[] = array('name' => 'ycd-countdown-floating-close-text', 'type' => 'text', 'defaultValue' => 'Close');
 		$options[] = array('name' => 'ycd-countdown-floating-text-size', 'type' => 'text', 'defaultValue' => '20px');
